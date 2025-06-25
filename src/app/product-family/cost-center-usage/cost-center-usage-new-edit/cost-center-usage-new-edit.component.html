@@ -1,0 +1,41 @@
+<form [formGroup]="checkoutForm" class="ctrlContainer">
+
+    <div class="parameter-wrapper">
+        <mat-form-field>
+            <mat-label>Centro de costos</mat-label>
+            <mat-select required
+                formControlName="costCenter"
+                placeholder="Centro de costos"
+                [compareWith]="compareEntitiesFn">
+                @for (costCenter of costCenters; track $index) {
+                    <mat-option
+                        [value]="costCenter">
+                        {{ costCenter.name }}
+                    </mat-option>
+                }
+            </mat-select>
+            @if (formValidator.get('costCenter')?.hasErrors()) {
+                <mat-error>
+                    {{ formValidator.get('costCenter')?.errorMessage }}
+                </mat-error>
+            }
+        </mat-form-field>
+    </div>
+
+    <div class="parameter-wrapper">
+        <mat-form-field class="usagePercentage">
+            <mat-label>% de utilizaci&oacute;n</mat-label>
+            <input matInput required
+                formControlName="usagePercentage" 
+                placeholder="% de utilizaci&oacute;n">
+            @if (formValidator.get('usagePercentage')?.hasErrors()) {
+                <mat-error>
+                    {{ formValidator.get('usagePercentage')?.errorMessage }}
+                </mat-error>
+            }
+        </mat-form-field>
+    </div>
+
+</form>
+
+<ng-template #loading class="loading">Cargando datos...</ng-template>

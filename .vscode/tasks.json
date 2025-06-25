@@ -1,0 +1,32 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "npm: build:dev",
+      "type": "npm",
+      "script": "build:dev",
+      "isBackground": true,
+      "group": "build",
+      "problemMatcher": [],
+      "detail": "This task builds the Angular app in dev mode."
+    },
+    {
+      "label": "npm: build:prod",
+      "type": "npm",
+      "script": "build:prod",
+      "isBackground": true,
+      "group": "build",
+      "problemMatcher": [],
+      "detail": "This task builds the Angular app in prod mode."
+    },
+    {
+      "label": "npm: start:bs",
+      "type": "npm",
+      "script": "start:bs",
+      "isBackground": true,
+      "group": "build",
+      "problemMatcher": [],
+      "detail": "This task starts Browser Sync."
+    }
+  ]
+}

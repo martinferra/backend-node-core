@@ -1,0 +1,107 @@
+@if (productFamily) {
+  <h1 mat-dialog-title>{{ productFamily._id ? 'Editar Familia' : 'Nueva Familia' }}</h1>
+
+  <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+    <mat-dialog-content>
+      <div class="parameter-wrapper">
+        <mat-form-field>
+          <mat-label>Nombre</mat-label>
+          <input
+            matInput
+            required
+            type="text"
+            formControlName="name"
+            placeholder="Nombre"
+            autocomplete="off"
+          />
+          <mat-hint>Nombre</mat-hint>
+          @if (formValidator.get('name')?.hasErrors()) {
+            <mat-error>
+              {{ formValidator.get('name')?.errorMessage }}
+            </mat-error>
+          }
+        </mat-form-field>
+      </div>
+      <div class="parameter-wrapper">
+        <mat-form-field>
+          <mat-label>Precio</mat-label>
+          <input
+            matInput
+            required
+            type="text"
+            formControlName="price"
+            placeholder="Precio"
+            autocomplete="off"
+          />
+          <mat-hint>Precio</mat-hint>
+          @if (formValidator.get('price')?.hasErrors()) {
+            <mat-error>
+              {{ formValidator.get('price')?.errorMessage }}
+            </mat-error>
+          }
+        </mat-form-field>
+      </div>
+      <div class="parameter-wrapper">
+        <mat-form-field>
+          <mat-label>Costo variable</mat-label>
+          <input
+            matInput
+            required
+            type="text"
+            formControlName="variableCost"
+            placeholder="Costo variable"
+            autocomplete="off"
+          />
+          <mat-hint>Costo variable</mat-hint>
+          @if (formValidator.get('variableCost')?.hasErrors()) {
+            <mat-error>
+              {{ formValidator.get('variableCost')?.errorMessage }}
+            </mat-error>
+          }
+        </mat-form-field>
+      </div>
+      <div class="parameter-wrapper">
+        <mat-form-field>
+          <mat-label>Producci&oacute;n proyectada</mat-label>
+          <input
+            matInput
+            required
+            type="text"
+            formControlName="projectedQ"
+            placeholder="Producci&oacute;n proyectada"
+            autocomplete="off"
+          />
+          <mat-hint>Producci&oacute;n proyectada</mat-hint>
+          @if (formValidator.get('projectedQ')?.hasErrors()) {
+            <mat-error>
+              {{ formValidator.get('projectedQ')?.errorMessage }}
+            </mat-error>
+          }
+        </mat-form-field>
+      </div>
+      <div class="parameter-wrapper">
+        <app-cost-centers-usage-editor 
+          [parentElement]="productFamily"
+          [cardFormat]="false"
+          (listChangeEmitter)="updateCostCentersUsage($event)"
+          (editingEmitter)="editingCostCentersUsage = $event">
+        </app-cost-centers-usage-editor>
+      </div>
+    </mat-dialog-content>
+
+    <mat-dialog-actions align="end">
+      <button
+        mat-stroked-button
+        type="button"
+        class="action"
+        (click)="cancel()"
+      >Cancelar</button>
+      <button
+        mat-stroked-button
+        type="submit"
+        class="action"
+        [disabled]="disableSubmitButton"
+      >Guardar</button>
+    </mat-dialog-actions>
+  </form>
+}

@@ -1,0 +1,43 @@
+<div class="input-group">
+  <span>{{ label }}</span>
+  <div class="input-row">
+    <div class="step-perc-selector">
+      <span class="step-perc-sign">&plusmn;</span>
+      <select (change)="onStepPercChange($event)">
+        @for (opt of stepOptions; track opt) {
+          <option [value]="opt.value" [selected]="opt.value === stepPerc">{{opt.label}}</option>
+        }
+      </select>
+    </div>
+    <div class="value-editor">
+      <button
+        mat-icon-button
+        type="button"
+        (click)="decrement()">
+        <mat-icon mat-list-icon>remove_circle</mat-icon>
+      </button>
+      <input type="number" [value]="value" (input)="onInputChange($event)">
+      <button
+        mat-icon-button
+        type="button"
+        (click)="increment()">
+        <mat-icon mat-list-icon>add_circle</mat-icon>
+      </button>
+    </div>
+    @if (showDelta) {
+      <div
+        class="delta"
+        [ngClass]="{'delta-positive': deltaIsPositive, 'delta-negative': !deltaIsPositive}"
+      >
+        @if (deltaIsPositive) {
+          <mat-icon class="delta-positive">arrow_upward</mat-icon>
+        } @else {
+          <mat-icon class="delta-negative">arrow_downward</mat-icon>
+        }
+        <span>{{ deltaString + ' (' + deltaPercentageString + ')'}}</span>
+      </div>
+    } @else {
+      <div class="no-delta">valor original</div>
+    }
+  </div>
+</div>

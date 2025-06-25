@@ -1,0 +1,61 @@
+@if (costCenter) {
+  <h1 mat-dialog-title>{{ costCenter._id ? 'Editar Centro de costos' : 'Nuevo centro de costos' }}</h1>
+
+  <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+    <mat-dialog-content>
+      <div class="parameter-wrapper">
+        <mat-form-field>
+          <mat-label>Nombre</mat-label>
+          <input
+            matInput
+            required
+            type="text"
+            formControlName="name"
+            placeholder="Nombre"
+            autocomplete="off"
+          />
+          <mat-hint>Nombre</mat-hint>
+          @if (formValidator.get('name')?.hasErrors()) {
+            <mat-error>
+              {{ formValidator.get('name')?.errorMessage }}
+            </mat-error>
+          }
+        </mat-form-field>
+      </div>
+      <div class="parameter-wrapper">
+        <mat-form-field>
+          <mat-label>Costo total</mat-label>
+          <input
+            matInput
+            required
+            type="text"
+            formControlName="totalCost"
+            placeholder="Costo total"
+            autocomplete="off"
+          />
+          <mat-hint>Costo total</mat-hint>
+          @if (formValidator.get('totalCost')?.hasErrors()) {
+            <mat-error>
+              {{ formValidator.get('totalCost')?.errorMessage }}
+            </mat-error>
+          }
+        </mat-form-field>
+      </div>
+    </mat-dialog-content>
+
+    <mat-dialog-actions align="end">
+      <button
+        mat-stroked-button
+        type="button"
+        class="action"
+        (click)="cancel()"
+      >Cancelar</button>
+      <button
+        mat-stroked-button
+        type="submit"
+        class="action"
+        [disabled]="disableSubmitButton"
+      >Guardar</button>
+    </mat-dialog-actions>
+  </form>
+}
