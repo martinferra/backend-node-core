@@ -11,7 +11,7 @@ const helmet = require('helmet');
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger.json');
 const routes = require('../routes/index.route');
-const config = require('./config');
+const config = require('@martinferra/config');
 const passport = require('./passport');
 
 const app = express();
@@ -41,12 +41,12 @@ function loggerFn(tokens, req, res) {
   return logMsg;
 }
 
-// Choose what fronten framework to serve the dist from
-var distDir = '../../dist/';
+// Choose what frontend framework to serve the dist from
+var distDir = '../../dist/mean-core/';
 if (config.frontend == 'react') {
   distDir = '../../node_modules/material-dashboard-react/dist';
 } else {
-  distDir = '../../dist/';
+  distDir = '../../dist/mean-core/';
 }
 
 
@@ -71,7 +71,7 @@ app.use(
   )
 );
 app.use(/^((?!(api)).)*/, (req, res) => {
-  res.sendFile(path.join(__dirname, '../../dist/index.html'));
+  res.sendFile(path.join(__dirname, '../../dist/mean-core/index.html'));
 });
 
 app.use(bodyParser.json());

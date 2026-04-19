@@ -1,0 +1,80 @@
+@if (input) {
+  <h1 mat-dialog-title>{{ input._id ? 'Editar insumo' : 'Nuevo insumo' }}</h1>
+
+  <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+    <mat-dialog-content>
+      <div class="parameter-wrapper">
+        <mat-form-field>
+          <mat-label>Nombre</mat-label>
+          <input
+            matInput
+            required
+            type="text"
+            formControlName="name"
+            placeholder="Nombre"
+            autocomplete="off"
+          />
+          <mat-hint>Nombre</mat-hint>
+          @if (formValidator.get('name')?.hasErrors()) {
+            <mat-error>
+              {{ formValidator.get('name')?.errorMessage }}
+            </mat-error>
+          }
+        </mat-form-field>
+      </div>
+      <div class="parameter-wrapper">
+        <mat-form-field>
+          <mat-label>C&oacute;digo</mat-label>
+          <input
+            matInput
+            required
+            type="text"
+            formControlName="sku"
+            placeholder="C&oacute;digo"
+            autocomplete="off"
+          />
+          <mat-hint>C&oacute;digo</mat-hint>
+          @if (formValidator.get('sku')?.hasErrors()) {
+            <mat-error>
+              {{ formValidator.get('sku')?.errorMessage }}
+            </mat-error>
+          }
+        </mat-form-field>
+      </div>
+      <div class="parameter-wrapper">
+        <mat-form-field>
+          <mat-label>Costo</mat-label>
+          <input
+            matInput
+            required
+            type="text"
+            formControlName="cost"
+            placeholder="Costo"
+            autocomplete="off"
+          />
+          <mat-hint>Costo</mat-hint>
+          @if (formValidator.get('cost')?.hasErrors()) {
+            <mat-error>
+              {{ formValidator.get('cost')?.errorMessage }}
+            </mat-error>
+          }
+        </mat-form-field>
+      </div>
+    </mat-dialog-content>
+
+    <mat-dialog-actions align="end">
+      <button
+        mat-stroked-button
+        type="button"
+        class="action"
+        (click)="cancel()"
+      >Cancelar</button>
+      <button
+        mat-stroked-button
+        type="submit"
+        class="action"
+        [disabled]="disableSubmitButton"
+      >Guardar</button>
+    </mat-dialog-actions>
+  </form>
+}

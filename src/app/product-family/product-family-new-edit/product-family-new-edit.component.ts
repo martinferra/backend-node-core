@@ -92,9 +92,6 @@ export class ProductFamilyNewEditComponent implements OnInit {
   private initializeFormGroup() {
     this.checkoutForm = this.formBuilder.group({
       name: null,
-      price: null,
-      variableCost: null,
-      projectedQ: null,
     });
   }
 
@@ -115,9 +112,6 @@ export class ProductFamilyNewEditComponent implements OnInit {
           AppRegExp.onlyAlphaNumericsOrPunctuation
         ),
       ]);
-    this.addNumberValidator('price');
-    this.addNumberValidator('variableCost');
-    this.addNumberValidator('projectedQ');
   }
 
   private addNumberValidator(key: string): void {
@@ -144,10 +138,7 @@ export class ProductFamilyNewEditComponent implements OnInit {
 
   private updateFormFromInput() {
     this.checkoutForm.patchValue({
-      name: this.productFamily.name,
-      price: this.productFamily.price,
-      variableCost: this.productFamily.variableCost,
-      projectedQ: this.productFamily.projectedQ,
+      name: this.productFamily.name
     });
   }
 
@@ -156,24 +147,6 @@ export class ProductFamilyNewEditComponent implements OnInit {
       .get('name')
       ?.valueChanges.subscribe((name: string) => {
         this.productFamily.name = name;
-        this.updateDisableSubmitButton();
-      });
-    this.checkoutForm
-      .get('price')
-      ?.valueChanges.subscribe((price: number) => {
-        this.productFamily.price = price;
-        this.updateDisableSubmitButton();
-      });
-    this.checkoutForm
-      .get('variableCost')
-      ?.valueChanges.subscribe((variableCost: number) => {
-        this.productFamily.variableCost = variableCost;
-        this.updateDisableSubmitButton();
-      });
-    this.checkoutForm
-      .get('projectedQ')
-      ?.valueChanges.subscribe((projectedQ: number) => {
-        this.productFamily.projectedQ = projectedQ;
         this.updateDisableSubmitButton();
       });
   }

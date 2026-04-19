@@ -13,7 +13,7 @@ import { CommonModule } from '@angular/common';
 import { User } from '../../../models/user/user.model';
 import { UserService } from '../../../models/user/user.service';
 import { UserNewEditDialogWrapperComponent } from '../user-new-edit/user-new-edit.component';
-import { ConfirmationDialogComponent } from '../../confirmation-dialog/confirmation-dialog.component';
+import { ConfirmationDialogComponent } from '@martinferra/frontend-common';
 import { FloatingComponent } from 'src/app/floating-component';
 
 @Component({

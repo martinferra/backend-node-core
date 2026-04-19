@@ -1,11 +1,11 @@
 const express = require('express');
 const asyncHandler = require('express-async-handler');
 const passport = require('passport');
-const userCtrl = require('../controllers/user.controller');
-const authCtrl = require('../controllers/auth.controller');
-const registrationReqCtrl = require('../controllers/registration-req.controller');
+const userCtrl = require('@martinferra/backend-common').controllers.user;
+const authCtrl = require('@martinferra/backend-common').controllers.auth;
+const registrationReqCtrl = require('@martinferra/backend-common').controllers.registrationReq;
 
-const config = require('../config/config');
+const config = require('@martinferra/config');
 
 const router = express.Router();
 module.exports = router;

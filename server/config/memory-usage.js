@@ -1,4 +1,4 @@
-const serverProcs = require('./server-processes');
+const serverProcs = require('@martinferra/backend-common').config.serverProcesses;
 const memoryUsage = require('../../common/commonFunctions').logMemoryUsage;
 
 function init(server) {

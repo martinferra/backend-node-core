@@ -9,6 +9,7 @@ import { AppRegExp, ControlValidatorEntry, CustomValidators, FormValidator } fro
 import { CostCenter } from 'src/models/cost-center/cost-center.model';
 import { cloneDeep } from 'lodash';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @Component({
   selector: 'app-cost-center-new-edit',
@@ -22,6 +23,7 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
+    MatCheckboxModule
 ],
 })
 export class CostCenterNewEditComponent implements OnInit {
@@ -72,7 +74,8 @@ export class CostCenterNewEditComponent implements OnInit {
   private initializeFormGroup() {
     this.checkoutForm = this.formBuilder.group({
       name: null,
-      totalCost: null
+      totalCost: null,
+      isVariable: null,
     });
   }
 
@@ -122,6 +125,7 @@ export class CostCenterNewEditComponent implements OnInit {
     this.checkoutForm.patchValue({
       name: this.costCenter.name,
       totalCost: this.costCenter.totalCost,
+      isVariable: this.costCenter.isVariable
     });
   }
 
@@ -132,6 +136,9 @@ export class CostCenterNewEditComponent implements OnInit {
     this.checkoutForm
       .get('totalCost')
       ?.valueChanges.subscribe((totalCost: number) => (this.costCenter.totalCost = totalCost));
+    this.checkoutForm
+      .get('isVariable')
+      ?.valueChanges.subscribe((isVariable: boolean) => (this.costCenter.isVariable = isVariable));
   }
 
   get disableSubmitButton(): boolean {

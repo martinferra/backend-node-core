@@ -1,5 +1,4 @@
-import { inject, Injectable } from '@angular/core';
-import { CUSTOM_ELEMENTS_SERVICE_TOKEN } from '@app/custom-elements.interface';
+import { Injectable } from '@angular/core';
 
 export enum operations {
   new = 'new',

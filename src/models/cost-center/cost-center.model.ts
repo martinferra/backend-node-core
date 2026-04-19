@@ -15,4 +15,7 @@ export class CostCenter {
 
   @Expose()
   totalCost!: number;
+
+  @Expose()
+  isVariable: boolean = false;
 }

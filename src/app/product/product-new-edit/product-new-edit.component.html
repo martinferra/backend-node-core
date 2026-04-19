@@ -1,0 +1,188 @@
+@if (product) {
+  <h1 mat-dialog-title>{{ product._id ? 'Editar producto' : 'Nuevo producto' }}</h1>
+
+  <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+    <mat-dialog-content>
+      <div class="parameter-wrapper">
+        <mat-form-field>
+          <mat-label>Nombre</mat-label>
+          <input
+            matInput
+            required
+            type="text"
+            formControlName="name"
+            placeholder="Nombre"
+            autocomplete="off"
+          />
+          <mat-hint>Nombre</mat-hint>
+          @if (formValidator.get('name')?.hasErrors()) {
+            <mat-error>
+              {{ formValidator.get('name')?.errorMessage }}
+            </mat-error>
+          }
+        </mat-form-field>
+      </div>
+      <div class="parameter-wrapper">
+        <mat-form-field>
+          <mat-label>C&oacute;digo</mat-label>
+          <input
+            matInput
+            required
+            type="text"
+            formControlName="sku"
+            placeholder="C&oacute;digo"
+            autocomplete="off"
+          />
+          <mat-hint>C&oacute;digo</mat-hint>
+          @if (formValidator.get('sku')?.hasErrors()) {
+            <mat-error>
+              {{ formValidator.get('sku')?.errorMessage }}
+            </mat-error>
+          }
+        </mat-form-field>
+      </div>
+      <div class="parameter-wrapper">
+        <mat-form-field>
+          <mat-label>Peso (g)</mat-label>
+          <input
+            matInput
+            required
+            type="text"
+            formControlName="weight"
+            placeholder="Peso"
+            autocomplete="off"
+          />
+          <mat-hint>Peso en gramos</mat-hint>
+          @if (formValidator.get('weight')?.hasErrors()) {
+            <mat-error>
+              {{ formValidator.get('weight')?.errorMessage }}
+            </mat-error>
+          }
+        </mat-form-field>
+      </div>
+      <div class="parameter-wrapper">
+        <mat-form-field>
+          <mat-label>Precio unitario</mat-label>
+          <input
+            matInput
+            required
+            type="text"
+            formControlName="unitPrice"
+            placeholder="Precio"
+            autocomplete="off"
+          />
+          <mat-hint>Precio unitario</mat-hint>
+          @if (formValidator.get('unitPrice')?.hasErrors()) {
+            <mat-error>
+              {{ formValidator.get('unitPrice')?.errorMessage }}
+            </mat-error>
+          }
+        </mat-form-field>
+      </div>
+      <div class="parameter-wrapper">
+        <mat-form-field>
+          <mat-label>Precio unit. concesionarios</mat-label>
+          <input
+            matInput
+            required
+            type="text"
+            formControlName="unitPriceForResellers"
+            placeholder="Precio unit. concesionarios"
+            autocomplete="off"
+          />
+          <mat-hint>Precio unit. concesionarios</mat-hint>
+          @if (formValidator.get('unitPriceForResellers')?.hasErrors()) {
+            <mat-error>
+              {{ formValidator.get('unitPriceForResellers')?.errorMessage }}
+            </mat-error>
+          }
+        </mat-form-field>
+      </div>
+      <div class="parameter-wrapper">
+        <mat-form-field>
+          <mat-label>Producci&oacute;n proyectada (u)</mat-label>
+          <input
+            matInput
+            required
+            type="text"
+            formControlName="projectedUnitsQ"
+            placeholder="Producci&oacute;n proyectada"
+            autocomplete="off"
+          />
+          <mat-hint>Producci&oacute;n proyectada</mat-hint>
+          @if (formValidator.get('projectedUnitsQ')?.hasErrors()) {
+            <mat-error>
+              {{ formValidator.get('projectedUnitsQ')?.errorMessage }}
+            </mat-error>
+          }
+        </mat-form-field>
+      </div>
+      <div class="parameter-wrapper">
+        <mat-form-field>
+          <mat-label>Prod. proy. concesionarios (u)</mat-label>
+          <input
+            matInput
+            required
+            type="text"
+            formControlName="projectedUnitsQForResellers"
+            placeholder="Prod. proy concesionarios"
+            autocomplete="off"
+          />
+          <mat-hint>Prod. proyec. concesionarios</mat-hint>
+          @if (formValidator.get('projectedUnitsQForResellers')?.hasErrors()) {
+            <mat-error>
+              {{ formValidator.get('projectedUnitsQForResellers')?.errorMessage }}
+            </mat-error>
+          }
+        </mat-form-field>
+      </div>
+      <div class="parameter-wrapper">
+        <mat-form-field>
+          <mat-label>Familia de producto</mat-label>
+          <mat-select
+            formControlName="productFamily"
+            placeholder="Familia"
+            [compareWith]="compareEntitiesFn"
+          >
+            <mat-option *ngFor="let family of productFamilies" [value]="family">
+              {{ family.name }}
+            </mat-option>
+          </mat-select>
+          <mat-hint>Seleccione una familia</mat-hint>
+          @if (formValidator.get('productFamily')?.hasErrors()) {
+            <mat-error>
+              {{ formValidator.get('productFamily')?.errorMessage }}
+            </mat-error>
+          }
+        </mat-form-field>
+      </div>
+      <div class="parameter-wrapper">
+        <label style="margin-bottom: 8px; display: block;">Insumos</label>
+        <mat-selection-list
+          formControlName="inputs"
+          [multiple]="true"
+          [compareWith]="compareEntitiesFn"
+        >
+          <mat-list-option *ngFor="let input of availableInputs" [value]="input">
+            {{ input.name }} ({{ input.sku }})
+          </mat-list-option>
+        </mat-selection-list>
+      </div>
+    </mat-dialog-content>
+
+    <mat-dialog-actions align="end">
+      <button
+        mat-stroked-button
+        type="button"
+        class="action"
+        (click)="cancel()"
+      >Cancelar</button>
+      <button
+        mat-stroked-button
+        type="submit"
+        class="action"
+        [disabled]="disableSubmitButton"
+      >Guardar</button>
+    </mat-dialog-actions>
+  </form>
+}

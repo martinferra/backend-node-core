@@ -23,63 +23,6 @@
         </mat-form-field>
       </div>
       <div class="parameter-wrapper">
-        <mat-form-field>
-          <mat-label>Precio</mat-label>
-          <input
-            matInput
-            required
-            type="text"
-            formControlName="price"
-            placeholder="Precio"
-            autocomplete="off"
-          />
-          <mat-hint>Precio</mat-hint>
-          @if (formValidator.get('price')?.hasErrors()) {
-            <mat-error>
-              {{ formValidator.get('price')?.errorMessage }}
-            </mat-error>
-          }
-        </mat-form-field>
-      </div>
-      <div class="parameter-wrapper">
-        <mat-form-field>
-          <mat-label>Costo variable</mat-label>
-          <input
-            matInput
-            required
-            type="text"
-            formControlName="variableCost"
-            placeholder="Costo variable"
-            autocomplete="off"
-          />
-          <mat-hint>Costo variable</mat-hint>
-          @if (formValidator.get('variableCost')?.hasErrors()) {
-            <mat-error>
-              {{ formValidator.get('variableCost')?.errorMessage }}
-            </mat-error>
-          }
-        </mat-form-field>
-      </div>
-      <div class="parameter-wrapper">
-        <mat-form-field>
-          <mat-label>Producci&oacute;n proyectada</mat-label>
-          <input
-            matInput
-            required
-            type="text"
-            formControlName="projectedQ"
-            placeholder="Producci&oacute;n proyectada"
-            autocomplete="off"
-          />
-          <mat-hint>Producci&oacute;n proyectada</mat-hint>
-          @if (formValidator.get('projectedQ')?.hasErrors()) {
-            <mat-error>
-              {{ formValidator.get('projectedQ')?.errorMessage }}
-            </mat-error>
-          }
-        </mat-form-field>
-      </div>
-      <div class="parameter-wrapper">
         <app-cost-centers-usage-editor 
           [parentElement]="productFamily"
           [cardFormat]="false"

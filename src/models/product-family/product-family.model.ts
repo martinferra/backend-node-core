@@ -2,21 +2,15 @@ import { Exclude, Expose, Transform, Type } from 'class-transformer';
 import { CostCenter } from '../cost-center/cost-center.model';
 import { WithClassId } from '../decorators/withClassId.decorator';
 import { RegisteredForGui } from '../decorators/registeredForGui.decorator';
-import { replaceById } from 'common/commonFunctions';
+import { commonFunctions } from '@martinferra/common';
 
 @Exclude()
 @WithClassId('ProductFamily')
 export class ProductFamily {
   constructor(
-    name?: string,
-    price?: number,
-    variableCost?: number,
-    projectedQ?: number
+    name?: string
   ) {
     if (name) this.name = name;
-    if (price) this.price = price;
-    if (variableCost) this.variableCost = variableCost;
-    if (projectedQ) this.projectedQ = projectedQ;
   }
 
   @Expose()
@@ -26,23 +20,31 @@ export class ProductFamily {
   name!: string;
 
   @Expose()
-  price!: number;
-
-  @Expose()
-  variableCost!: number;
-
-  @Expose()
-  projectedQ!: number;
-
-  @Expose()
   @Type(() => CostCenterUsage)
   costCentersUsage!: CostCenterUsage[];
 
+  price!: number;
+
+  productsVariableCost!: number;
+
+  projectedQ!: number;
+
   public get fixedCost(): number {
-    return this.costCentersUsage.reduce(
-      (sum, usage) => sum + (usage.usagePercentage / 100) * usage.costCenter.totalCost,
+    return this.costCentersUsage
+      .filter(usage => !usage.costCenter.isVariable)
+      .reduce(
+        (sum, usage) => sum + (usage.usagePercentage / 100) * (usage.qPercentage / 100) * usage.costCenter.totalCost,
       0
     );
+  };
+
+  public get variableCost(): number {
+    return this.costCentersUsage
+      .filter(usage => usage.costCenter.isVariable)
+      .reduce(
+        (sum, usage) => sum + (usage.usagePercentage / 100) * (usage.qPercentage / 100) * usage.costCenter.totalCost / this.projectedQ,
+      0
+    ) + this.productsVariableCost;
   };
 
   public get breakEvenQ(): number {
@@ -59,9 +61,12 @@ export class ProductFamily {
 export class CostCenterUsage {
   @Expose()
   @Type(() => CostCenter)
-  @Transform((params: any) => replaceById(params.value), { toPlainOnly: true })
+  @Transform((params: any) => commonFunctions.replaceById(params.value), { toPlainOnly: true })
   costCenter!: CostCenter;
 
   @Expose()
   usagePercentage!: number;
+
+  @Expose()
+  qPercentage!: number;
 }

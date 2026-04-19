@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const util = require('util');
 const debug = require('debug')('express-mongoose-es6-rest-api:index');
 
-const config = require('./config');
+const config = require('@martinferra/config');
 const globalPlugin = require('../config/mongoose.plugins');
 
 // connect to mongo db

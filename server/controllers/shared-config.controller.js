@@ -1,4 +1,4 @@
-const config = require('../config/config');
+const config = require('@martinferra/config');
 
 function getSharedConfig() {
   return {

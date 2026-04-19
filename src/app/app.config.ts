@@ -8,8 +8,7 @@ import { getCatchErrorFn } from "./interceptors/http-error.interceptor";
 import { AuthService } from "./shared/services/auth/auth.service";
 import { AppLoaderService } from "./app-loader.service";
 import { ComponentResolverService } from "src/models/component-resolver.service";
-import { CUSTOM_ELEMENTS_SERVICE_TOKEN } from "./custom-elements.interface";
-import { DefaultElementsService } from "./default-elements.service";
+import { getProjectCustomElementsProviders } from "./project-custom-elements.providers";
 
 function appInitializerFactory(authService: AuthService) {
   return () => {
@@ -34,10 +33,7 @@ export const appConfig: ApplicationConfig = {
       multi: true,
       deps: [AuthService],
     },
-    {
-      provide: CUSTOM_ELEMENTS_SERVICE_TOKEN,
-      useClass: DefaultElementsService
-    },
+    ...getProjectCustomElementsProviders(),
     AppLoaderService
   ],
 };

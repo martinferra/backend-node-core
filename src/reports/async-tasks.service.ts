@@ -3,7 +3,7 @@ import { TokenStorage } from '@app/shared/services/auth/token.storage';
 import { Observable, throwError } from 'rxjs';
 import { concatMap, filter, map, tap } from 'rxjs/operators';
 import { webSocket, WebSocketSubject } from 'rxjs/webSocket';
-import { getMessageFromBlob } from 'common/commonFunctions';
+import { commonFunctions } from '@martinferra/common';
 
 export enum TaskType {
   rpc = 'rpc',
@@ -24,16 +24,16 @@ export class AsyncTasksService {
 
   private getMessageFromBlobOperator(type: TaskType): any {
     const postProcessByDefault: boolean = type !== TaskType.subscription;
-    return (blob: Blob): Promise<any> => getMessageFromBlob(blob, postProcessByDefault)
+    return (blob: Blob): Promise<any> => commonFunctions(blob, postProcessByDefault)
   }
 
-  private getKeepAliveOperator(socket$: any): any { 
-    return (message: any)=>{
-      if(message.type === 'keepAlive') {
+  private getKeepAliveOperator(socket$: any): any {
+    return (message: any) => {
+      if (message.type === 'keepAlive') {
         let timeOut: number = message.payload.timeOut || 30000;
-        setTimeout(()=>{
-          if(!socket$.closed) {
-            socket$.next({type: 'keepAlive', spec: timeOut});
+        setTimeout(() => {
+          if (!socket$.closed) {
+            socket$.next({ type: 'keepAlive', spec: timeOut });
           }
         }, timeOut);
       }

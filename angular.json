@@ -3,7 +3,7 @@
     "version": 1,
     "newProjectRoot": "projects",
     "projects": {
-      "mean-boilerplate": {
+      "mean-core": {
         "root": "",
         "sourceRoot": "src",
         "projectType": "application",
@@ -11,7 +11,7 @@
           "build": {
             "builder": "@angular-builders/custom-webpack:browser",
             "options": {
-              "outputPath": "dist",
+              "outputPath": "dist/mean-core",
               "index": "src/index.html",
               "main": "src/main.ts",
               "tsConfig": "./tsconfig.app.json",
@@ -92,21 +92,54 @@
           "serve": {
             "builder": "@angular-builders/custom-webpack:dev-server",
             "options": {
-              "browserTarget": "mean-boilerplate:build",
+              "browserTarget": "mean-core:build",
               "customWebpackConfig": {
                 "path": "./webpack.config.js"
               }
             },
             "configurations": {
               "production": {
-                "browserTarget": "mean-boilerplate:build:production"
+                "browserTarget": "mean-core:build:production"
               }
             }
           },
           "extract-i18n": {
             "builder": "@angular-devkit/build-angular:extract-i18n",
             "options": {
-              "browserTarget": "mean-boilerplate:build"
+              "browserTarget": "mean-core:build"
+            }
+          }
+        }
+      },
+      "@martinferra/frontend-common": {
+        "projectType": "library",
+        "root": "projects/martinferra/frontend-common",
+        "sourceRoot": "projects/martinferra/frontend-common/src",
+        "prefix": "lib",
+        "architect": {
+          "build": {
+            "builder": "@angular-devkit/build-angular:ng-packagr",
+            "options": {
+              "project": "projects/martinferra/frontend-common/ng-package.json"
+            },
+            "configurations": {
+              "production": {
+                "tsConfig": "projects/martinferra/frontend-common/tsconfig.lib.prod.json"
+              },
+              "development": {
+                "tsConfig": "projects/martinferra/frontend-common/tsconfig.lib.json"
+              }
+            },
+            "defaultConfiguration": "production"
+          },
+          "test": {
+            "builder": "@angular/build:karma",
+            "options": {
+              "tsConfig": "projects/martinferra/frontend-common/tsconfig.spec.json",
+              "polyfills": [
+                "zone.js",
+                "zone.js/testing"
+              ]
             }
           }
         }

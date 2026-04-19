@@ -63,6 +63,20 @@
                 </div>
                 <div class="narrow-side-menu-item">
                   <mat-icon
+                    (click)="showProductsList()"
+                    matTooltip="Productos"
+                    aria-hidden="false"
+                  >sell</mat-icon>
+                </div>
+                <div class="narrow-side-menu-item">
+                  <mat-icon
+                    (click)="showInputsList()"
+                    matTooltip="Insumos"
+                    aria-hidden="false"
+                  >category</mat-icon>
+                </div>
+                <div class="narrow-side-menu-item">
+                  <mat-icon
                     (click)="showFamiliesList()"
                     matTooltip="Familias"
                     aria-hidden="false"

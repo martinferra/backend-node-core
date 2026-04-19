@@ -1,0 +1,12 @@
+{
+  "name": "@martinferra/common",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "private": true,
+  "author": "Martín Ferrari",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "bson": "^6.6.0"
+  }
+}

@@ -24,6 +24,8 @@ import { FloatingComponent, FloatingComponentConstructor } from '../app/floating
 import { ProductFamilyListComponent } from './product-family/product-family-list/product-family-list.component';
 import { CostCenterListComponent } from './cost-center/cost-center-list/cost-center-list.component';
 import { CostCenterUsageNewEditComponent } from './product-family/cost-center-usage/cost-center-usage-new-edit/cost-center-usage-new-edit.component';
+import { ProductListComponent } from './product/product-list/product-list.component';
+import { InputListComponent } from './input/input-list/input-list.component';
 
 enum MenuItems {
   downloads = 2,
@@ -153,6 +155,14 @@ export class AppComponent {
 
   showCostCentersList(): void {
     this.showTopLeftComponent(CostCenterListComponent);
+  }
+
+  showProductsList(): void {
+    this.showTopLeftComponent(ProductListComponent);
+  }
+
+  showInputsList(): void {
+    this.showTopLeftComponent(InputListComponent);
   }
 
   showFamiliesList(): void {

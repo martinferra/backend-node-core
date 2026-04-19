@@ -1,9 +1,9 @@
-const { getRouterByModel } = require('./router.factory');
-const userSchema = require('../schemas/user.schema');
-const userCtrl = require('../controllers/user.controller');
-const requireAdmin = require('../middleware/require-admin');
+const { getRouterByModel } = require('@martinferra/backend-common').routes.routerFactory;
+const userSchema = require('@martinferra/backend-common').schemas.userSchema;
+const userCtrl = require('@martinferra/backend-common').controllers.user;
+const requireAdmin = require('@martinferra/backend-common').middleware.requireAdmin;
 const asyncHandler = require('express-async-handler');
-const modelFactory = require('../models/model.factory');
+const modelFactory = require('@martinferra/backend-common').models.modelFactory;
 
 function setCustomRoutes(router) {
     router.route('/findAutocompleteOptions').post(requireAdmin, asyncHandler(findAutocompleteOptions));

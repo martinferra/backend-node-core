@@ -36,6 +36,20 @@
         </mat-form-field>
     </div>
 
+    <div class="parameter-wrapper">
+        <mat-form-field class="qPercentage">
+            <mat-label>% de cantidad</mat-label>
+            <input matInput required
+                formControlName="qPercentage" 
+                placeholder="% de cantidad">
+            @if (formValidator.get('qPercentage')?.hasErrors()) {
+                <mat-error>
+                    {{ formValidator.get('qPercentage')?.errorMessage }}
+                </mat-error>
+            }
+        </mat-form-field>
+    </div>
+
 </form>
 
 <ng-template #loading class="loading">Cargando datos...</ng-template>

@@ -1,14 +1,28 @@
 {
   "compilerOptions": {
-    "baseUrl": "./",
     "paths": {
-      "@app/*": ["src/app/*"]
+      "@app/*": [
+        "./src/app/*"
+      ],
+      "src/*": [
+        "./src/*"
+      ],
+      "@martinferra/frontend-common": [
+        "./dist/martinferra/frontend-common"
+      ],
+      "@martinferra/frontend-custom": [
+        "../frontend-custom/src/public-api.ts"
+      ],
+      "@martinferra/frontend-custom/*": [
+        "../frontend-custom/src/*"
+      ]
     },
     "target": "ES2022",
     "typeRoots": ["node_modules/@types"],
     "lib": ["ESNext", "DOM"],
-    "module": "es2020",
-    "moduleResolution": "node",
+    "module": "es2022",
+    "moduleResolution": "bundler",
+    "resolvePackageJsonExports": false,
     "strict": true,
     "sourceMap": true,
     "declaration": false,
@@ -18,5 +32,13 @@
     "experimentalDecorators": true,
     "useDefineForClassFields": false,
     "noImplicitAny": false
-  }
+  },
+  "references": [
+    {
+      "path": "./projects/martinferra/frontend-common/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/martinferra/frontend-common/tsconfig.spec.json"
+    }
+  ]
 }

@@ -7,9 +7,11 @@ import { Chart, LineController, LineElement, PointElement, LinearScale, Category
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { ParameterEditorComponent } from './parameter-editor/parameter-editor.component';
-import { FormBuilder, ReactiveFormsModule, UntypedFormGroup } from '@angular/forms';
+import { FormBuilder, ReactiveFormsModule, FormsModule, UntypedFormGroup } from '@angular/forms';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { IndicatorViewComponent } from './indicator-view/indicator-view.component';
+import { ProductFamilyService } from 'src/models/product-family/product-family.service';
+import { MatRadioModule } from '@angular/material/radio';
 
 // Register Chart.js controllers and elements
 Chart.register(
@@ -29,18 +31,23 @@ Chart.register(
   standalone: true,
   imports: [
     ReactiveFormsModule,
+    FormsModule,
     BaseChartDirective,
     MatButtonModule,
     MatIconModule,
+    MatRadioModule,
     ParameterEditorComponent,
     IndicatorViewComponent,
   ],
 })
 export class ProductFamilyChartComponent implements OnInit {
 
+  productFamily!: ProductFamily;
+
   checkoutForm!: UntypedFormGroup;
   chartOptions!: ChartOptions<'line'>;
   chartData!: ChartData<'line'>;
+  selectedVariable: string = 'projectedQ';
 
   // Editable values and their original values
   price!: number;
@@ -56,10 +63,10 @@ export class ProductFamilyChartComponent implements OnInit {
     private formBuilder: FormBuilder,
     private dialogRef: MatDialogRef<ProductFamilyChartComponent>, 
     private breakpointObserver: BreakpointObserver,
-    @Inject(MAT_DIALOG_DATA) public productFamily: ProductFamily
+    private productFamilyService: ProductFamilyService,
+    @Inject(MAT_DIALOG_DATA) public inputProductFamily: ProductFamily
   ) {
     this.setDialogSize();
-    this.initEditableValues();
     this.chartOptions = this.getChartOptions();
   }
 
@@ -81,8 +88,12 @@ export class ProductFamilyChartComponent implements OnInit {
     }
 
   ngOnInit(): void {
-    this.initializeForm();
-    this.updateChart();
+    this.productFamilyService.getWithProductSum(this.inputProductFamily).subscribe((pf: ProductFamily) => {
+      this.productFamily = pf;
+      this.initEditableValues();
+      this.initializeForm();
+      this.updateChart();
+    });
   }
 
   private initializeForm(): void {
@@ -252,6 +263,19 @@ export class ProductFamilyChartComponent implements OnInit {
           pointHoverRadius: 8,
           showLine: false,
           order: 1,
+        },
+        {
+          label: 'Costo fijo',
+          data: [
+            { x: 0, y: this.fixedCost },
+            { x: this.projectedQ, y: this.fixedCost }
+          ],
+          borderColor: 'orange',
+          backgroundColor: 'transparent',
+          borderWidth: 1,
+          borderDash: [5, 5],
+          pointRadius: 0,
+          order: 3,
         },
       ],
     };

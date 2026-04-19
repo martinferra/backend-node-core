@@ -14,7 +14,7 @@ import { RegistrationReqService } from '../../../models/registration-req/registr
 import { RegistrationReq } from '../../../models/registration-req/registration-req.model';
 import { User } from '../../../models/user/user.model';
 import { UserService } from '../../../models/user/user.service';
-import { ConfirmationDialogComponent } from '../../confirmation-dialog/confirmation-dialog.component';
+import { ConfirmationDialogComponent } from '@martinferra/frontend-common';
 import { FloatingComponent } from 'src/app/floating-component';
 
 @Component({

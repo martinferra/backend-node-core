@@ -51,7 +51,7 @@ export class CostCentersUsageEditorComponent implements OnInit, ExpandableListCo
         title: 'Centros de Costo',
       },
       getElementTitle: (element: CostCenterUsage)=>element.costCenter?.name ?? '',
-      getElementDescription: (element: CostCenterUsage)=>element.usagePercentage ?? ''
+      getElementDescription: (element: CostCenterUsage)=>`${element.usagePercentage ?? ''} / ${element.qPercentage ?? ''}`,
     }
   }
 

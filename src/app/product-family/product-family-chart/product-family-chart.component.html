@@ -1,66 +1,84 @@
-<div class="main-container">
-  <div class="header-panel panel">
-    <div class="title">An&aacute;lisis marginal</div>
-  </div>
-    <div class="component-content">
-      <div class="side-panel panel">
-        <form [formGroup]="checkoutForm">
-          <button
-            mat-stroked-button
-            (click)="resetValues()"
-            class="reset-btn"
-            tabindex="-1"
-          >Restablecer</button>
-          <app-parameter-editor
-            label="Producci&oacute;n proyectada (Kg)"
-            formControlName="projectedQ"
-          >
-          </app-parameter-editor>
-          <app-parameter-editor
-            label="Precio (US$/Kg)"
-            formControlName="price"
-          >
-          </app-parameter-editor>
-          <app-parameter-editor
-            label="Costo variable (US$/Kg)"
-            formControlName="variableCost"
-          >
-          </app-parameter-editor>
-          <app-parameter-editor
-            label="Costo fijo (US$)"
-            formControlName="fixedCost"
-          >
-          </app-parameter-editor>
-        </form>
-      </div>
-      <div class="chart-panel panel">
-        <div class="indicators">
-          <app-indicator-view
-            label="Punto de equilibrio"
-            [value]="breakEvenPoint"
-            valueSuffix=" Kg"
-          >
-          </app-indicator-view>
-          <app-indicator-view
-            label="Pto. eq. / Prod. proy. (%)"
-            [value]="breakEvenPercentage"
-            valueSuffix="%"
-            [showDeltaPercentage]="false"
-          >
-          </app-indicator-view>
-          <app-indicator-view
-            label="Utilidad esperada"
-            [value]="expectedEarnings"
-            valuePrefix="$"
-          >
-          </app-indicator-view>
-        </div>
-        <canvas
-          baseChart
-          [data]="chartData"
-          [options]="chartOptions"
-          type="line">
-        </canvas>
-      </div>
+@if(productFamily) {
+  <div class="main-container">
+    <div class="header-panel panel">
+      <div class="title">An&aacute;lisis marginal</div>
     </div>
-</div>
+      <div class="component-content">
+        <div class="side-panel panel">
+          <form [formGroup]="checkoutForm">
+            <button
+              mat-stroked-button
+              (click)="resetValues()"
+              class="reset-btn"
+              tabindex="-1"
+            >Restablecer</button>
+            <mat-radio-group
+              class="example-radio-group"
+              [(ngModel)]="selectedVariable">
+              <div>
+                <app-parameter-editor
+                  label="Producci&oacute;n proyectada (Kg)"
+                  formControlName="projectedQ"
+                >
+                </app-parameter-editor>
+                <mat-radio-button value="projectedQ"></mat-radio-button>
+              </div>
+              <div>
+                <app-parameter-editor
+                  label="Precio (USD/Kg)"
+                  formControlName="price"
+                >
+                </app-parameter-editor>
+                <mat-radio-button value="price"></mat-radio-button>
+              </div>
+              <div>
+                <app-parameter-editor
+                  label="Costo variable (USD/Kg)"
+                  formControlName="variableCost"
+                >
+                </app-parameter-editor>
+                <mat-radio-button value="variableCost"></mat-radio-button>
+              </div>
+              <div>
+                <app-parameter-editor
+                  label="Costo fijo (USD)"
+                  formControlName="fixedCost"
+                >
+                </app-parameter-editor>
+                <mat-radio-button value="fixedCost"></mat-radio-button>
+              </div>
+            </mat-radio-group>
+          </form>
+        </div>
+        <div class="chart-panel panel">
+          <div class="indicators">
+            <app-indicator-view
+              label="Punto de equilibrio"
+              [value]="breakEvenPoint"
+              valueSuffix=" Kg"
+            >
+            </app-indicator-view>
+            <app-indicator-view
+              label="Pto. eq. / Prod. proy. (%)"
+              [value]="breakEvenPercentage"
+              valueSuffix="%"
+              [showDeltaPercentage]="false"
+            >
+            </app-indicator-view>
+            <app-indicator-view
+              label="Utilidad esperada"
+              [value]="expectedEarnings"
+              valuePrefix="$"
+            >
+            </app-indicator-view>
+          </div>
+          <canvas
+            baseChart
+            [data]="chartData"
+            [options]="chartOptions"
+            type="line">
+          </canvas>
+        </div>
+      </div>
+  </div>
+}

@@ -1,6 +1,6 @@
 {
-  "name": "mean-boilerplate",
-  "short_name": "mean-boilerplate",
+  "name": "mean-core",
+  "short_name": "mean-core",
   "theme_color": "#1976d2",
   "background_color": "#fafafa",
   "display": "standalone",

@@ -70,7 +70,8 @@ export class CostCenterUsageNewEditComponent implements OnInit, ExpandableCompon
   private initializeFormGroup() {
     this.checkoutForm = this.formBuilder.group({
       costCenter: null,
-      usagePercentage: null
+      usagePercentage: null,
+      qPercentage: null
     });
   }
 
@@ -100,6 +101,20 @@ export class CostCenterUsageNewEditComponent implements OnInit, ExpandableCompon
       ),
     ])
 
+    this.formValidator.get('qPercentage')?.setValidatorEntries([
+      new ControlValidatorEntry(
+        'required',
+        'Porcentaje requerido',
+        ()=>Validators.required
+      ),
+      new ControlValidatorEntry(
+        'onlyNumbers',
+        'Solo números',
+        CustomValidators.regexValidator,
+        AppRegExp.onlyNumbers
+      ),
+    ])
+
     if(this.markedAsTouched) {
       this.markAsTouched();
     }
@@ -108,7 +123,8 @@ export class CostCenterUsageNewEditComponent implements OnInit, ExpandableCompon
   private updateFormFromInput() {
     this.checkoutForm.patchValue({
       costCenter: this.inputElement.costCenter || null,
-      usagePercentage: this.inputElement.usagePercentage || null
+      usagePercentage: this.inputElement.usagePercentage || null,
+      qPercentage: this.inputElement.qPercentage || null
     });
   }
 
@@ -160,7 +176,8 @@ export class CostCenterUsageNewEditComponent implements OnInit, ExpandableCompon
     // Check if both form controls are not null or undefined
     const costCenter = this.checkoutForm.get('costCenter')?.value;
     const usagePercentage = this.checkoutForm.get('usagePercentage')?.value;
-    return costCenter == null && usagePercentage == null;
+    const qPercentage = this.checkoutForm.get('qPercentage')?.value;
+    return costCenter == null && usagePercentage == null && qPercentage == null;
   };
 
   public updateContext(contextData: any): void {

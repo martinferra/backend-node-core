@@ -1,5 +1,5 @@
 const asyncHandler = require('express-async-handler');
-const { getBaseRouter } = require('./router.factory');
+const { getBaseRouter } = require('@martinferra/backend-common').routes.routerFactory;
 const os = require('os');
 const fs = require('fs');
 const path = require('path');

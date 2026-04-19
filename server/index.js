@@ -1,8 +1,8 @@
 // config should be imported before importing any other file
-const config = require('./config/config');
+const config = require('@martinferra/config');
 require('./required');
 const app = require('./config/express');
-const serverProcs = require('./config/server-processes');
+const serverProcs = require('@martinferra/backend-common').config.serverProcesses;
 
 // module.parent check is required to support mocha watch
 // src: https://github.com/mochajs/mocha/issues/1912
@@ -13,5 +13,3 @@ if (!module.parent) {
   });
   serverProcs.init(server);
 }
-
-//module.exports = app;

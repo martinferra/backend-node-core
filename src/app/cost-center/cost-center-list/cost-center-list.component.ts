@@ -9,7 +9,7 @@ import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { map, Observable } from 'rxjs';
-import { ConfirmationDialogComponent } from '@app/confirmation-dialog/confirmation-dialog.component';
+import { ConfirmationDialogComponent } from '@martinferra/frontend-common';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTooltipModule } from '@angular/material/tooltip';
@@ -34,7 +34,7 @@ export class CostCenterListComponent implements FloatingComponent, OnInit {
 
   @ViewChild(MatPaginator, { static: false }) paginator!: MatPaginator;
 
-  columnsToDisplay = ['name', 'actions'];
+  columnsToDisplay = ['name', 'type', 'actions'];
 
   costCenterList$!: Observable<MatTableDataSource<any>>;
 

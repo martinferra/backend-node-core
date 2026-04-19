@@ -1,4 +1,4 @@
-const config = require('./server/config/config');
+const config = require('@martinferra/config');
 const { exec } = require('child_process');
 
 const chromeDebugPort = 9222;
