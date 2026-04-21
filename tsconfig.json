@@ -1,40 +1,7 @@
 {
+  "extends": "../tsconfig.json",
   "compilerOptions": {
-    "paths": {
-      "@app/*": [
-        "./src/app/*"
-      ],
-      "src/*": [
-        "./src/*"
-      ],
-      "@martinferra/frontend-common": [
-        "./projects/martinferra/frontend-common/src/public-api.ts"
-      ],
-      "@martinferra/frontend-common/*": [
-        "./projects/martinferra/frontend-common/src/*"
-      ],
-      "@martinferra/frontend-custom": [
-        "../frontend-custom/src/public-api.ts"
-      ],
-      "@martinferra/frontend-custom/*": [
-        "../frontend-custom/src/*"
-      ]
-    },
-    "target": "ES2022",
-    "typeRoots": ["node_modules/@types"],
-    "lib": ["ESNext", "DOM"],
-    "module": "es2022",
-    "moduleResolution": "bundler",
-    "resolvePackageJsonExports": false,
-    "strict": true,
-    "sourceMap": true,
-    "declaration": false,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "importHelpers": true,
-    "experimentalDecorators": true,
-    "useDefineForClassFields": false,
-    "noImplicitAny": false
+    "typeRoots": ["node_modules/@types"]
   },
   "references": [
     {
