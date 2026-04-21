@@ -1,9 +1,12 @@
-const config = require('@martinferra/config');
+require('dotenv').config({ path: require('path').resolve(__dirname, '../.env') });
+
+const serverPort = process.env.SERVER_PORT || 4040;
+const browserSyncPort = process.env.BS_PORT || 3000;
 
 module.exports = {
-    proxy: "http://localhost:" + config.port, // Replace with your server URL
-    files: ["dist/mean-core/**/*.*"], // Files to watch for changes
-    reloadDelay: 1000, // Delay before reloading
-    port: config.browserSync.port, // Port for browser-sync server
-    browser: "launch-chrome-with-debugging.cmd" // Use batch file to launch Chrome with URL
+    proxy: "http://localhost:" + serverPort,
+    files: ["dist/mean-core/**/*.*"],
+    reloadDelay: 1000,
+    port: browserSyncPort,
+    browser: "launch-chrome-with-debugging.cmd"
 };

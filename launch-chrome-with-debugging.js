@@ -1,10 +1,11 @@
-const config = require('@martinferra/config');
+require('dotenv').config({ path: require('path').resolve(__dirname, '../.env') });
 const { exec } = require('child_process');
 
 const chromeDebugPort = 9222;
 const remoteDebuggingPort = `--remote-debugging-port=${chromeDebugPort}`;
 const userDataDir = `--user-data-dir="C:\\chrome-dev-profile"`;
-const url = 'http://localhost:' + config.browserSync.port;
+const browserSyncPort = process.env.BS_PORT || 3000;
+const url = 'http://localhost:' + browserSyncPort;
 
 (async () => {
     const chromeLauncher = await import('chrome-launcher');
