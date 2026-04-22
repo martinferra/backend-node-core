@@ -1,7 +1,28 @@
 {
   "extends": "../tsconfig.json",
   "compilerOptions": {
-    "typeRoots": ["node_modules/@types"]
+    "baseUrl": ".",
+    "typeRoots": ["node_modules/@types"],
+    "paths": {
+      "@app/*": [
+        "./src/app/*"
+      ],
+      "src/*": [
+        "./src/*"
+      ],
+      "@martinferra/frontend-common": [
+        "./projects/martinferra/frontend-common/src/public-api.ts"
+      ],
+      "@martinferra/frontend-common/*": [
+        "./projects/martinferra/frontend-common/src/*"
+      ],
+      "@martinferra/frontend-custom": [
+        "../frontend-custom/src/public-api.ts"
+      ],
+      "@martinferra/frontend-custom/*": [
+        "../frontend-custom/src/*"
+      ]
+    }
   },
   "references": [
     {
