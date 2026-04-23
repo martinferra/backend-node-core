@@ -1,7 +1,7 @@
 {
     "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
     "version": 1,
-    "newProjectRoot": "projects",
+    "newProjectRoot": "packages",
     "projects": {
       "mean-core": {
         "root": "",
@@ -113,21 +113,21 @@
       },
       "@martinferra/frontend-common": {
         "projectType": "library",
-        "root": "projects/martinferra/frontend-common",
-        "sourceRoot": "projects/martinferra/frontend-common/src",
+        "root": "packages/frontend-common",
+        "sourceRoot": "packages/frontend-common/src",
         "prefix": "lib",
         "architect": {
           "build": {
             "builder": "@angular-devkit/build-angular:ng-packagr",
             "options": {
-              "project": "projects/martinferra/frontend-common/ng-package.json"
+              "project": "packages/frontend-common/ng-package.json"
             },
             "configurations": {
               "production": {
-                "tsConfig": "projects/martinferra/frontend-common/tsconfig.lib.prod.json"
+                "tsConfig": "packages/frontend-common/tsconfig.lib.prod.json"
               },
               "development": {
-                "tsConfig": "projects/martinferra/frontend-common/tsconfig.lib.json"
+                "tsConfig": "packages/frontend-common/tsconfig.lib.json"
               }
             },
             "defaultConfiguration": "production"
@@ -135,7 +135,7 @@
           "test": {
             "builder": "@angular/build:karma",
             "options": {
-              "tsConfig": "projects/martinferra/frontend-common/tsconfig.spec.json",
+              "tsConfig": "packages/frontend-common/tsconfig.spec.json",
               "polyfills": [
                 "zone.js",
                 "zone.js/testing"
