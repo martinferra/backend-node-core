@@ -1,1 +1,1 @@
-start node launch-chrome-with-debugging.js
+start node "%~dp0launch-chrome-with-debugging.js"
