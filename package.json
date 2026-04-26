@@ -9,12 +9,12 @@
     "ng": "ng",
     "serve": "node ./server",
     "start": "node ./server",
-    "build": "ng build --configuration production",
-    "build:prod": "ng build --configuration production",
-    "build:dev": "ng build --watch=true --configuration development",
+    "build": "ng build mean-core --configuration production",
+    "build:prod": "ng build mean-core --configuration production",
+    "build:dev": "ng build mean-core --watch=true --configuration development",
     "start:bs": "browser-sync start --config bs-config.js",
-    "build:prod-debug": "ng build --configuration production-debug",
-    "e2e": "ng e2e"
+    "build:prod-debug": "ng build mean-core --configuration production-debug",
+    "e2e": "ng e2e mean-core"
   },
   "private": true,
   "dependencies": {

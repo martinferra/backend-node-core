@@ -42,11 +42,11 @@ function loggerFn(tokens, req, res) {
 }
 
 // Choose what frontend framework to serve the dist from
-var distDir = '../../dist/mean-core/';
+var distDir = '../../../dist/mean-core/';
 if (config.frontend == 'react') {
-  distDir = '../../node_modules/material-dashboard-react/dist';
+  distDir = '../../../node_modules/material-dashboard-react/dist';
 } else {
-  distDir = '../../dist/mean-core/';
+  distDir = '../../../dist/mean-core/';
 }
 
 
@@ -71,7 +71,7 @@ app.use(
   )
 );
 app.use(/^((?!(api)).)*/, (req, res) => {
-  res.sendFile(path.join(__dirname, '../../dist/mean-core/index.html'));
+  res.sendFile(path.join(__dirname, '../../../dist/mean-core/index.html'));
 });
 
 app.use(bodyParser.json());
