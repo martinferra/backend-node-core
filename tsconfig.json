@@ -2,35 +2,6 @@
   "extends": "../tsconfig.json",
   "compilerOptions": {
     "ignoreDeprecations": "5.0",
-    "baseUrl": ".",
-    "typeRoots": ["node_modules/@types"],
-    "paths": {
-      "@app/*": [
-        "./src/app/*"
-      ],
-      "src/*": [
-        "./src/*"
-      ],
-      "@martinferra/frontend-common": [
-        "./packages/frontend-common/src/public-api.ts"
-      ],
-      "@martinferra/frontend-common/*": [
-        "./packages/frontend-common/src/*"
-      ],
-      "@martinferra/frontend-custom": [
-        "../frontend-custom/src/public-api.ts"
-      ],
-      "@martinferra/frontend-custom/*": [
-        "../frontend-custom/src/*"
-      ]
-    }
-  },
-  "references": [
-    {
-      "path": "./packages/frontend-common/tsconfig.lib.json"
-    },
-    {
-      "path": "./packages/frontend-common/tsconfig.spec.json"
-    }
-  ]
+    "typeRoots": ["node_modules/@types"]
+  }
 }
