@@ -4,3 +4,27 @@
 
 export * from './lib/frontend-common';
 export * from './lib/confirmation-dialog/confirmation-dialog.component';
+export * from './lib/floating-component';
+export * from './lib/appValidators';
+export * from './lib/static-html.directive';
+
+// UI Components
+export * from './lib/basic-autocompleted-input/basic-autocompleted-input.component';
+export * from './lib/basic-list-editor/basic-list-editor.component';
+export * from './lib/check-cards-group/check-cards-group.component';
+export * from './lib/downloads-list/downloads-list.component';
+export * from './lib/expansion-list-editor/expansion-list-editor.component';
+export * from './lib/multi-slider/multi-slider.component';
+export * from './lib/tasks-drop-down-viewer/tasks-drop-down-viewer.component';
+export * from './lib/dynamic-container/dynamic-container.directive';
+
+// Users & Registration
+export * from './lib/users/user-list/user-list.component';
+
+// Models
+export * from './lib/models/data.service';
+export * from './lib/models/component-resolver.service';
+export * from './lib/models/class-resolver.service';
+
+// Date utils and reports
+export * from './lib/dateFunctions';

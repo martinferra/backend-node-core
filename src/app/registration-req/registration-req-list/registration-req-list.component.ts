@@ -10,12 +10,12 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { CommonModule } from '@angular/common';
 
-import { RegistrationReqService } from '../../../models/registration-req/registration-req.service';
-import { RegistrationReq } from '../../../models/registration-req/registration-req.model';
-import { User } from '../../../models/user/user.model';
-import { UserService } from '../../../models/user/user.service';
+import { RegistrationReqService } from 'src/models/registration-req/registration-req.service';
+import { RegistrationReq } from 'src/models/registration-req/registration-req.model';
+import { User } from 'src/models/user/user.model';
+import { UserService } from 'src/models/user/user.service';
 import { ConfirmationDialogComponent } from '@martinferra/frontend-common';
-import { FloatingComponent } from 'src/app/floating-component';
+import { FloatingComponent } from '@app/floating-component';
 
 @Component({
   selector: 'app-registration-req-list',

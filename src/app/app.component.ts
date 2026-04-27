@@ -11,21 +11,21 @@ import { Router, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 import { map, merge, mergeWith, Observable, shareReplay, startWith, Subject, Subscription, tap } from 'rxjs';
-import { BackgroundTasksService } from 'src/app/services/backgroundTasks/background-tasks.service';
-import { TaskState } from '../models/interfaces/taskState.interface';
+import { BackgroundTasksService } from '@app/services/backgroundTasks/background-tasks.service';
+import { TaskState } from 'src/models/interfaces/taskState.interface';
 
-import { User } from '../models/user/user.model';
-import { AuthService } from './shared/services';
-import { DynamicContainerDirective } from 'src/app/dynamic-container/dynamic-container.directive';
-import { DownloadsListComponent } from 'src/app/downloads-list/downloads-list.component';
-import { UserListComponent } from 'src/app/users/user-list/user-list.component';
+import { User } from 'src/models/user/user.model';
+import { AuthService } from '@app/shared/services';
+import { DynamicContainerDirective } from '@app/dynamic-container/dynamic-container.directive';
+import { DownloadsListComponent } from '@app/downloads-list/downloads-list.component';
+import { UserListComponent } from '@app/users/user-list/user-list.component';
 import { RegistrationReqListComponent } from 'src/app/registration-req/registration-req-list/registration-req-list.component';
-import { FloatingComponent, FloatingComponentConstructor } from '../app/floating-component';
-import { ProductFamilyListComponent } from './product-family/product-family-list/product-family-list.component';
-import { CostCenterListComponent } from './cost-center/cost-center-list/cost-center-list.component';
-import { CostCenterUsageNewEditComponent } from './product-family/cost-center-usage/cost-center-usage-new-edit/cost-center-usage-new-edit.component';
-import { ProductListComponent } from './product/product-list/product-list.component';
-import { InputListComponent } from './input/input-list/input-list.component';
+import { FloatingComponent, FloatingComponentConstructor } from '@app/floating-component';
+import { ProductFamilyListComponent } from '@app/product-family/product-family-list/product-family-list.component';
+import { CostCenterListComponent } from '@app/cost-center/cost-center-list/cost-center-list.component';
+import { CostCenterUsageNewEditComponent } from '@app/product-family/cost-center-usage/cost-center-usage-new-edit/cost-center-usage-new-edit.component';
+import { ProductListComponent } from '@app/product/product-list/product-list.component';
+import { InputListComponent } from '@app/input/input-list/input-list.component';
 
 enum MenuItems {
   downloads = 2,
