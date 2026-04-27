@@ -21,11 +21,11 @@ import { DownloadsListComponent } from '@app/downloads-list/downloads-list.compo
 import { UserListComponent } from '@app/users/user-list/user-list.component';
 import { RegistrationReqListComponent } from 'src/app/registration-req/registration-req-list/registration-req-list.component';
 import { FloatingComponent, FloatingComponentConstructor } from '@app/floating-component';
-import { ProductFamilyListComponent } from '@app/product-family/product-family-list/product-family-list.component';
-import { CostCenterListComponent } from '@app/cost-center/cost-center-list/cost-center-list.component';
-import { CostCenterUsageNewEditComponent } from '@app/product-family/cost-center-usage/cost-center-usage-new-edit/cost-center-usage-new-edit.component';
-import { ProductListComponent } from '@app/product/product-list/product-list.component';
-import { InputListComponent } from '@app/input/input-list/input-list.component';
+import { ProductFamilyListComponent } from '@martinferra/frontend-custom/product-family/product-family-list/product-family-list.component';
+import { CostCenterListComponent } from '@martinferra/frontend-custom/cost-center/cost-center-list/cost-center-list.component';
+import { CostCenterUsageNewEditComponent } from '@martinferra/frontend-custom/product-family/cost-center-usage/cost-center-usage-new-edit/cost-center-usage-new-edit.component';
+import { ProductListComponent } from '@martinferra/frontend-custom/product/product-list/product-list.component';
+import { InputListComponent } from '@martinferra/frontend-custom/input/input-list/input-list.component';
 
 enum MenuItems {
   downloads = 2,
