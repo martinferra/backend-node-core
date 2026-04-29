@@ -21,7 +21,7 @@
                 <div
                     class="selectedElementDesc unselectable"
                     [ngClass]="{selectedElementDescShort:editing}"
-                    (click)="editSelectedElement(); $event.preventDefault()"
+                    (click)="setSelectedElement(); $event.preventDefault()"
                     [matTooltip]="selectedElementDescription">
                     {{selectedElementShortenedDescription}}
                 </div>
@@ -84,7 +84,7 @@
             [value]="innerFilteredElement"
             [matTooltip]="displayElementInTooltip(innerFilteredElement)">
             <div 
-                *appStaticHtml="displayElementInList(innerFilteredElement)"     
+                *appStaticHtml="displayElementInListFn(innerFilteredElement)"     
                 (mousedown)="$event.preventDefault()">
             </div>
         </mat-option>

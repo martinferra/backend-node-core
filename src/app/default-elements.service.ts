@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ICustomElementsService } from './custom-elements.interface';
-import { AppComponent } from './app.component';
+import { AppComponent } from '@martinferra/frontend-custom';
 
 @Injectable()
 export class DefaultElementsService implements ICustomElementsService {

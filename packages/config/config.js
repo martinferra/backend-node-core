@@ -1,7 +1,8 @@
 const Joi = require('joi');
 
 // require and configure dotenv, will load vars in .env in PROCESS.ENV
-require('dotenv').config();
+const path = require('path');
+require('dotenv').config({ path: path.resolve(__dirname, '../../../.env') });
 
 // define validation for all the env vars
 const envVarsSchema = Joi.object({

@@ -6,7 +6,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { User } from '../models/user/user.model';
 import { AuthService } from '../shared/services';
 import { TasksDropDownViewerComponent } from '../tasks-drop-down-viewer/tasks-drop-down-viewer.component';
-import { MatMenu } from '@angular/material/menu';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-header',
@@ -17,7 +18,8 @@ import { MatMenu } from '@angular/material/menu';
     CommonModule,
     RouterModule,
     MatToolbarModule,
-    MatMenu,
+    MatMenuModule,
+    MatIconModule,
     TasksDropDownViewerComponent
   ],
 })

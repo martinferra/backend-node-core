@@ -27,6 +27,7 @@ import { mergeWith, shareReplay, startWith, switchMap, concatMap, tap } from 'rx
 import { StaticHtmlDirective } from '../static-html.directive';
 import { isInteger, clone } from 'lodash';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 function toString(inputValue: any): string { 
   return typeof inputValue === 'string' ? inputValue : '';
@@ -66,7 +67,8 @@ enum ComponentState {
     MatButtonModule,
     MatIconModule,
     MatAutocompleteModule,
-    StaticHtmlDirective
+    StaticHtmlDirective,
+    MatTooltipModule
   ],
 })
 export class BasicAutocompletedInputComponent<T>
