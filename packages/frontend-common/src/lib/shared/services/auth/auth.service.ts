@@ -5,7 +5,7 @@ import { Observable, BehaviorSubject, firstValueFrom, of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { plainToClass } from 'class-transformer';
 
-import { User } from 'src/models/user/user.model';
+import { User } from '../../../models/user/user.model';
 
 import { TokenStorage } from './token.storage';
 

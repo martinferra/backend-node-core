@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { DataService } from 'src/models/data.service';
-import { AsyncTasksService } from 'src/reports/async-tasks.service';
+import { DataService } from '../data.service';
+import { AsyncTasksService } from '../../reports/async-tasks.service';
 import { RegistrationReq } from './registration-req.model';
 
 @Injectable({

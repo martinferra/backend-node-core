@@ -12,14 +12,14 @@ import { CommonModule } from '@angular/common';
 
 import { map, merge, mergeWith, Observable, shareReplay, startWith, Subject, Subscription, tap } from 'rxjs';
 import { BackgroundTasksService } from '@app/services/backgroundTasks/background-tasks.service';
-import { TaskState } from 'src/models/interfaces/taskState.interface';
+import { TaskState } from '@martinferra/frontend-common/models/interfaces/taskState.interface';
 
-import { User } from 'src/models/user/user.model';
+import { User } from '@martinferra/frontend-common/models/user/user.model';
 import { AuthService } from '@app/shared/services';
 import { DynamicContainerDirective } from '@app/dynamic-container/dynamic-container.directive';
 import { DownloadsListComponent } from '@app/downloads-list/downloads-list.component';
 import { UserListComponent } from '@app/users/user-list/user-list.component';
-import { RegistrationReqListComponent } from 'src/app/registration-req/registration-req-list/registration-req-list.component';
+import { RegistrationReqListComponent } from './registration-req/registration-req-list/registration-req-list.component';
 import { FloatingComponent, FloatingComponentConstructor } from '@app/floating-component';
 import { ProductFamilyListComponent } from '@martinferra/frontend-custom/product-family/product-family-list/product-family-list.component';
 import { CostCenterListComponent } from '@martinferra/frontend-custom/cost-center/cost-center-list/cost-center-list.component';

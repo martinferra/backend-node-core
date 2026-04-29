@@ -28,3 +28,5 @@ export * from './lib/models/class-resolver.service';
 
 // Date utils and reports
 export * from './lib/dateFunctions';
+export * from './lib/ms-to-time-str.pipe';
+export * from './lib/pagination/mat-paginator-intl-esp';

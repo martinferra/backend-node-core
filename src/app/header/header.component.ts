@@ -3,7 +3,7 @@ import { Router, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
-import { User } from 'src/models/user/user.model';
+import { User } from '@martinferra/frontend-common/models/user/user.model';
 import { AuthService } from '@app/shared/services';
 import { TasksDropDownViewerComponent } from '@app/tasks-drop-down-viewer/tasks-drop-down-viewer.component';
 import { MatMenu } from '@angular/material/menu';
