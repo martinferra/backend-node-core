@@ -1,6 +1,6 @@
 import { bootstrapApplication } from '@angular/platform-browser';
 import { appConfig } from './app/app.config';
-import { environment } from './environments/environment';
+import { environment } from '../packages/frontend-common/src/lib/environments/environment';
 import { Component, enableProdMode, inject, runInInjectionContext } from '@angular/core';
 import { AppLoaderService } from './app/app-loader.service';
 

@@ -20,6 +20,13 @@ export * from './lib/dynamic-container/dynamic-container.directive';
 
 // Users & Registration
 export * from './lib/users/user-list/user-list.component';
+export * from './lib/registration-req/registration-req-list/registration-req-list.component';
+
+// Header
+export * from './lib/header/header.component';
+
+// Environments
+export * from './lib/environments/environment';
 
 // Models
 export * from './lib/models/data.service';

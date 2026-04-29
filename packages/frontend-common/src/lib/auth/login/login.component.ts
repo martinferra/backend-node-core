@@ -10,7 +10,7 @@ import { MatIconModule } from '@angular/material/icon';
 
 import { AuthService, UserInfo } from '@app/shared/services';
 import { ControlValidator, FormValidator } from '@app/appValidators';
-import { environment } from '../../../../../../src/environments/environment';
+import { environment } from '../../environments/environment';
 import { AuthComponentsUtilsService } from '../auth-components-utils.service';
 
 @Component({

@@ -19,7 +19,7 @@ import { AuthService } from '@app/shared/services';
 import { DynamicContainerDirective } from '@app/dynamic-container/dynamic-container.directive';
 import { DownloadsListComponent } from '@app/downloads-list/downloads-list.component';
 import { UserListComponent } from '@app/users/user-list/user-list.component';
-import { RegistrationReqListComponent } from './registration-req/registration-req-list/registration-req-list.component';
+import { RegistrationReqListComponent } from '@martinferra/frontend-common';
 import { FloatingComponent, FloatingComponentConstructor } from '@app/floating-component';
 import { ProductFamilyListComponent } from '@martinferra/frontend-custom/product-family/product-family-list/product-family-list.component';
 import { CostCenterListComponent } from '@martinferra/frontend-custom/cost-center/cost-center-list/cost-center-list.component';
