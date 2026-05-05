@@ -1,25 +1,14 @@
 import { bootstrapApplication } from '@angular/platform-browser';
 import { appConfig } from './app/app.config';
 import { environment } from '../packages/frontend-common/src/lib/environments/environment';
-import { Component, enableProdMode, inject, runInInjectionContext } from '@angular/core';
-import { AppLoaderService } from './app/app-loader.service';
+import { enableProdMode } from '@angular/core';
+import { AppComponent } from '@martinferra/frontend-custom';
 
 if (environment.production) {
     enableProdMode();
 }
 
-@Component({
-  selector: 'app-component-wrapper',
-  template: `<div id="app-root"></div>`,
-  standalone: true
-})
-export class AppComponentWrapper {}
-
-bootstrapApplication(AppComponentWrapper, appConfig).then(appRef => {
-    runInInjectionContext(appRef.injector, () => {
-        const appLoaderService = inject(AppLoaderService);
-        appLoaderService.loadAppComponent();
-    });
+bootstrapApplication(AppComponent, appConfig).then(() => {
     console.log('Application bootstrapped successfully');
 }).catch(err => {
     console.error('Error bootstrapping application:', err);

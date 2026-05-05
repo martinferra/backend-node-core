@@ -6,9 +6,7 @@ import { provideAnimations } from "@angular/platform-browser/animations";
 import { getAuthHeaderFn } from "@app/interceptors/header.interceptor";
 import { getCatchErrorFn } from "@app/interceptors/http-error.interceptor";
 import { AuthService } from "@app/shared/services/auth/auth.service";
-import { AppLoaderService } from "./app-loader.service";
 import { ComponentResolverService } from "@martinferra/frontend-common/models/component-resolver.service";
-import { getProjectCustomElementsProviders } from "./project-custom-elements.providers";
 
 function appInitializerFactory(authService: AuthService) {
   return () => {
@@ -32,8 +30,6 @@ export const appConfig: ApplicationConfig = {
       useFactory: appInitializerFactory,
       multi: true,
       deps: [AuthService],
-    },
-    ...getProjectCustomElementsProviders(),
-    AppLoaderService
+    }
   ],
 };
