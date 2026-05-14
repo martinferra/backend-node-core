@@ -130,8 +130,6 @@ async function getExcelReport(cb, spec, user, ...params) {
             if (sheet.pageSetup || spec.pageSetup) {
                 const pageSetup = { ...spec.pageSetup, ...sheet.pageSetup };
                 worksheetWriter.pageSetup = {
-                    paperSize: pageSetup.paperSize,
-                    orientation: pageSetup.orientation,
                     ...pageSetup
                 };
             }
@@ -247,8 +245,14 @@ async function getReportsGroup(cb, spec, user, ...params) {
 
             // If content contains a filesystem path (string), read file into Buffer.
             // JSZip expects actual content (Buffer / ArrayBuffer / Uint8Array / string / Blob).
-            if (typeof content === 'string' && fs.existsSync(content)) {
-                content = await fs.promises.readFile(content);
+            if (typeof content === 'string') {
+                try {
+                    content = await fs.promises.readFile(content);
+                } catch (readError) {
+                    if (!['ENOENT', 'ENOTDIR', 'EACCES'].includes(readError?.code)) {
+                        throw readError;
+                    }
+                }
             }
 
             folder.file(
