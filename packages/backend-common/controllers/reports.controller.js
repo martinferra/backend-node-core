@@ -245,11 +245,15 @@ async function getReportsGroup(cb, spec, user, ...params) {
 
             // If content contains a filesystem path (string), read file into Buffer.
             // JSZip expects actual content (Buffer / ArrayBuffer / Uint8Array / string / Blob).
-            if (typeof content === 'string') {
+            const looksLikePath = typeof content === 'string' &&
+                (path.isAbsolute(content) || content.includes('/') || content.includes('\\'));
+
+            if (looksLikePath) {
                 try {
                     content = await fs.promises.readFile(content);
                 } catch (readError) {
-                    if (!['ENOENT', 'ENOTDIR', 'EACCES'].includes(readError?.code)) {
+                    // Keep original string when it's not a readable file path.
+                    if (!['ENOENT', 'ENOTDIR'].includes(readError?.code)) {
                         throw readError;
                     }
                 }
