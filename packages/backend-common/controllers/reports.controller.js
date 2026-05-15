@@ -6,6 +6,7 @@ const getTimestampString = require('../../common/commonFunctions').getTimestampS
 const async = require('async');
 const tmp = require('tmp-promise');
 const path = require('path');
+const fs = require('fs');
 
 var reportSpecs = new Map();
 
@@ -124,6 +125,15 @@ async function getExcelReport(cb, spec, user, ...params) {
                     await worksheetWriter.getRow(dataRange.initialRowNum+i).commit();
                 }
             };
+
+            // Set page setup options
+            if (sheet.pageSetup || spec.pageSetup) {
+                const pageSetup = { ...spec.pageSetup, ...sheet.pageSetup };
+                worksheetWriter.pageSetup = {
+                    ...pageSetup
+                };
+            }
+
             await worksheetWriter.commit();
         }
 
@@ -228,13 +238,33 @@ async function getReportsGroup(cb, spec, user, ...params) {
         var zip = new JSZip();
         var folder = zip.folder(`${spec.fileBaseName}_${timestampStr}`);
 
-        spec.specArray.forEach((_spec, idx) => {
+        // Ensure each bufferArray item is actual content.
+        for (let idx = 0; idx < spec.specArray.length; idx++) {
+            const _spec = spec.specArray[idx];
+            let content = bufferArray[idx];
+
+            // If content contains a filesystem path (string), read file into Buffer.
+            // JSZip expects actual content (Buffer / ArrayBuffer / Uint8Array / string / Blob).
+            if (typeof content === 'string') {
+                try {
+                    const contentStats = await fs.promises.stat(content);
+                    if (contentStats.isFile()) {
+                        content = await fs.promises.readFile(content);
+                    }
+                } catch (readError) {
+                    // Keep original string when it's not a valid file path.
+                    if (!['ENOENT', 'ENOTDIR'].includes(readError?.code)) {
+                        throw readError;
+                    }
+                }
+            }
+
             folder.file(
                 `${_spec.fileBaseName}_${timestampStr}.${_spec.fileExt}`, 
-                bufferArray[idx], 
+                content,
                 {binary:true}
             );
-        });
+        }
 
         buffer = await zip.generateAsync({type:"arraybuffer"});
 

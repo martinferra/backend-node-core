@@ -1,0 +1,1538 @@
+[
+  {
+    "local": ".gitignore",
+    "origin_repo": "plant-monitor",
+    "origin_path": ".gitignore",
+    "score": 0.956,
+    "path_score": 1.0,
+    "content_score": 0.945
+  },
+  {
+    "local": ".node-version",
+    "origin_repo": "plant-monitor",
+    "origin_path": ".node-version",
+    "score": 1.0,
+    "path_score": 1.0,
+    "content_score": 1.0
+  },
+  {
+    "local": ".vscode/launch.json",
+    "origin_repo": "plant-monitor",
+    "origin_path": ".vscode/launch.json",
+    "score": 0.662,
+    "path_score": 1.0,
+    "content_score": 0.578
+  },
+  {
+    "local": "assets/dataload/customParserFunctions.js",
+    "origin_repo": "plant-monitor",
+    "origin_path": "assets/dataload/customParserFunctions.js",
+    "score": 0.978,
+    "path_score": 1.0,
+    "content_score": 0.972
+  },
+  {
+    "local": "assets/dataload/load-models.js",
+    "origin_repo": "plant-monitor",
+    "origin_path": "assets/dataload/load-models.js",
+    "score": 1.0,
+    "path_score": 1.0,
+    "content_score": 1.0
+  },
+  {
+    "local": "packages/backend-common/commonFunctions.js",
+    "origin_repo": "node-mean-server-generics",
+    "origin_path": "commonFunctions.js",
+    "score": 0.914,
+    "path_score": 0.6,
+    "content_score": 0.992
+  },
+  {
+    "local": "packages/backend-common/config/server-processes.js",
+    "origin_repo": "node-mean-server-generics",
+    "origin_path": "config/server-processes.js",
+    "score": 0.937,
+    "path_score": 0.684,
+    "content_score": 1.0
+  },
+  {
+    "local": "packages/backend-common/config/subscriptions.js",
+    "origin_repo": "node-mean-server-generics",
+    "origin_path": "config/subscriptions.js",
+    "score": 0.931,
+    "path_score": 0.657,
+    "content_score": 1.0
+  },
+  {
+    "local": "packages/backend-common/config/websocket-callbacks.js",
+    "origin_repo": "node-mean-server-generics",
+    "origin_path": "config/websocket-callbacks.js",
+    "score": 0.941,
+    "path_score": 0.707,
+    "content_score": 1.0
+  },
+  {
+    "local": "packages/backend-common/config/websockets.js",
+    "origin_repo": "node-mean-server-generics",
+    "origin_path": "config/websockets.js",
+    "score": 0.869,
+    "path_score": 0.625,
+    "content_score": 0.93
+  },
+  {
+    "local": "packages/backend-common/controllers/auth.controller.js",
+    "origin_repo": "plant-monitor",
+    "origin_path": "server/controllers/auth.controller.js",
+    "score": 0.91,
+    "path_score": 0.725,
+    "content_score": 0.957
+  },
+  {
+    "local": "packages/backend-common/controllers/controller.factory.js",
+    "origin_repo": "node-mean-server-generics",
+    "origin_path": "controllers/controller.factory.js",
+    "score": 0.945,
+    "path_score": 0.733,
+    "content_score": 0.998
+  },
+  {
+    "local": "packages/backend-common/controllers/registration-req.controller.js",
+    "origin_repo": "node-mean-server-generics",
+    "origin_path": "controllers/registration-req.controller.js",
+    "score": 0.956,
+    "path_score": 0.778,
+    "content_score": 1.0
+  },
+  {
+    "local": "packages/backend-common/controllers/reports.controller.js",
+    "origin_repo": "node-mean-server-generics",
+    "origin_path": "controllers/reports.controller.js",
+    "score": 0.896,
+    "path_score": 0.733,
+    "content_score": 0.937
+  },
+  {
+    "local": "packages/backend-common/controllers/shared-config.controller.js",
+    "origin_repo": "node-mean-server-generics",
+    "origin_path": "controllers/shared-config.controller.js",
+    "score": 0.912,
+    "path_score": 0.765,
+    "content_score": 0.948
+  },
+  {
+    "local": "packages/backend-common/controllers/user.controller.js",
+    "origin_repo": "plant-monitor",
+    "origin_path": "server/controllers/user.controller.js",
+    "score": 0.774,
+    "path_score": 0.725,
+    "content_score": 0.786
+  },
+  {
+    "local": "packages/backend-common/middleware/require-admin.js",
+    "origin_repo": "plant-monitor",
+    "origin_path": "server/middleware/require-admin.js",
+    "score": 0.941,
+    "path_score": 0.706,
+    "content_score": 1.0
+  },
+  {
+    "local": "packages/backend-common/models/model.factory.js",
+    "origin_repo": "node-mean-server-generics",
+    "origin_path": "models/model.factory.js",
+    "score": 0.913,
+    "path_score": 0.657,
+    "content_score": 0.977
+  },
+  {
+    "local": "packages/backend-common/models/registration-req.model.js",
+    "origin_repo": "node-mean-server-generics",
+    "origin_path": "models/registration-req.model.js",
+    "score": 0.926,
+    "path_score": 0.727,
+    "content_score": 0.976
+  },
+  {
+    "local": "packages/backend-common/models/user.model.js",
+    "origin_repo": "plant-monitor",
+    "origin_path": "server/models/user.model.js",
+    "score": 0.925,
+    "path_score": 0.648,
+    "content_score": 0.994
+  },
+  {
+    "local": "packages/backend-common/reports/reports-definitions.js",
+    "origin_repo": "plant-monitor",
+    "origin_path": "server/reports/reports-definitions.js",
+    "score": 0.945,
+    "path_score": 0.725,
+    "content_score": 1.0
+  },
+  {
+    "local": "packages/backend-common/routes/router.factory.js",
+    "origin_repo": "node-mean-server-generics",
+    "origin_path": "routes/router.factory.js",
+    "score": 0.933,
+    "path_score": 0.667,
+    "content_score": 1.0
+  },
+  {
+    "local": "packages/backend-common/schemas/registration-req.schema.js",
+    "origin_repo": "node-mean-server-generics",
+    "origin_path": "schemas/registration-req.schema.js",
+    "score": 0.948,
+    "path_score": 0.739,
+    "content_score": 1.0
+  },
+  {
+    "local": "packages/backend-common/schemas/user.schema.js",
+    "origin_repo": "plant-monitor",
+    "origin_path": "server/schemas/user.schema.js",
+    "score": 0.925,
+    "path_score": 0.667,
+    "content_score": 0.989
+  },
+  {
+    "local": "packages/common/commonFunctions.d.ts",
+    "origin_repo": "mean-common-generics",
+    "origin_path": "commonFunctions.d.ts",
+    "score": 0.943,
+    "path_score": 0.714,
+    "content_score": 1.0
+  },
+  {
+    "local": "packages/common/commonFunctions.js",
+    "origin_repo": "mean-common-generics",
+    "origin_path": "commonFunctions.js",
+    "score": 0.938,
+    "path_score": 0.692,
+    "content_score": 1.0
+  },
+  {
+    "local": "packages/common/regex-defs.js",
+    "origin_repo": "mean-common-generics",
+    "origin_path": "regex-defs.js",
+    "score": 0.924,
+    "path_score": 0.619,
+    "content_score": 1.0
+  },
+  {
+    "local": "packages/frontend-common/src/lib/admin/admin-user-guard.ts",
+    "origin_repo": "plant-monitor",
+    "origin_path": "src/app/admin/admin-user-guard.ts",
+    "score": 0.932,
+    "path_score": 0.659,
+    "content_score": 1.0
+  },
+  {
+    "local": "packages/frontend-common/src/lib/admin/admin.component.html",
+    "origin_repo": "plant-monitor",
+    "origin_path": "src/app/admin/admin.component.html",
+    "score": 0.933,
+    "path_score": 0.667,
+    "content_score": 1.0
+  },
+  {
+    "local": "packages/frontend-common/src/lib/admin/admin.component.ts",
+    "origin_repo": "plant-monitor",
+    "origin_path": "src/app/admin/admin.component.ts",
+    "score": 0.9,
+    "path_score": 0.652,
+    "content_score": 0.962
+  },
+  {
+    "local": "packages/frontend-common/src/lib/appValidators.ts",
+    "origin_repo": "angular-generics",
+    "origin_path": "app/appValidators.ts",
+    "score": 0.904,
+    "path_score": 0.522,
+    "content_score": 1.0
+  },
+  {
+    "local": "packages/frontend-common/src/lib/auth/auth-components-utils.service.spec.ts",
+    "origin_repo": "angular-generics",
+    "origin_path": "app/auth/auth-components-utils.service.spec.ts",
+    "score": 0.945,
+    "path_score": 0.727,
+    "content_score": 1.0
+  },
+  {
+    "local": "packages/frontend-common/src/lib/auth/auth-components-utils.service.ts",
+    "origin_repo": "angular-generics",
+    "origin_path": "app/auth/auth-components-utils.service.ts",
+    "score": 0.939,
+    "path_score": 0.703,
+    "content_score": 0.999
+  },
+  {
+    "local": "packages/frontend-common/src/lib/auth/auth.component.scss",
+    "origin_repo": "plant-monitor",
+    "origin_path": "src/app/auth/auth.component.scss",
+    "score": 0.93,
+    "path_score": 0.652,
+    "content_score": 1.0
+  },
+  {
+    "local": "packages/frontend-common/src/lib/auth/auth.routes.ts",
+    "origin_repo": "plant-monitor",
+    "origin_path": "src/app/auth/auth.routes.ts",
+    "score": 0.922,
+    "path_score": 0.608,
+    "content_score": 1.0
+  },
+  {
+    "local": "packages/frontend-common/src/lib/auth/login/login.component.html",
+    "origin_repo": "plant-monitor",
+    "origin_path": "src/app/auth/login/login.component.html",
+    "score": 0.784,
+    "path_score": 0.699,
+    "content_score": 0.805
+  },
+  {
+    "local": "packages/frontend-common/src/lib/auth/login/login.component.spec.ts",
+    "origin_repo": "plant-monitor",
+    "origin_path": "src/app/auth/login/login.component.spec.ts",
+    "score": 0.943,
+    "path_score": 0.716,
+    "content_score": 1.0
+  },
+  {
+    "local": "packages/frontend-common/src/lib/auth/login/login.component.ts",
+    "origin_repo": "plant-monitor",
+    "origin_path": "src/app/auth/login/login.component.ts",
+    "score": 0.762,
+    "path_score": 0.687,
+    "content_score": 0.781
+  },
+  {
+    "local": "packages/frontend-common/src/lib/auth/register/register.component.html",
+    "origin_repo": "plant-monitor",
+    "origin_path": "src/app/auth/register/register.component.html",
+    "score": 0.874,
+    "path_score": 0.73,
+    "content_score": 0.91
+  },
+  {
+    "local": "packages/frontend-common/src/lib/auth/register/register.component.spec.ts",
+    "origin_repo": "plant-monitor",
+    "origin_path": "src/app/auth/register/register.component.spec.ts",
+    "score": 0.949,
+    "path_score": 0.744,
+    "content_score": 1.0
+  },
+  {
+    "local": "packages/frontend-common/src/lib/basic-autocompleted-input/basic-autocompleted-input-event.interface.ts",
+    "origin_repo": "angular-generics",
+    "origin_path": "app/basic-autocompleted-input/basic-autocompleted-input-event.interface.ts",
+    "score": 0.963,
+    "path_score": 0.814,
+    "content_score": 1.0
+  },
+  {
+    "local": "packages/frontend-common/src/lib/basic-autocompleted-input/basic-autocompleted-input.component.html",
+    "origin_repo": "angular-generics",
+    "origin_path": "app/basic-autocompleted-input/basic-autocompleted-input.component.html",
+    "score": 0.815,
+    "path_score": 0.805,
+    "content_score": 0.817
+  },
+  {
+    "local": "packages/frontend-common/src/lib/basic-autocompleted-input/basic-autocompleted-input.component.scss",
+    "origin_repo": "angular-generics",
+    "origin_path": "app/basic-autocompleted-input/basic-autocompleted-input.component.scss",
+    "score": 0.961,
+    "path_score": 0.805,
+    "content_score": 1.0
+  },
+  {
+    "local": "packages/frontend-common/src/lib/basic-autocompleted-input/basic-autocompleted-input.component.spec.ts",
+    "origin_repo": "angular-generics",
+    "origin_path": "app/basic-autocompleted-input/basic-autocompleted-input.component.spec.ts",
+    "score": 0.962,
+    "path_score": 0.811,
+    "content_score": 1.0
+  },
+  {
+    "local": "packages/frontend-common/src/lib/basic-autocompleted-input/basic-autocompleted-input.component.ts",
+    "origin_repo": "angular-generics",
+    "origin_path": "app/basic-autocompleted-input/basic-autocompleted-input.component.ts",
+    "score": 0.786,
+    "path_score": 0.8,
+    "content_score": 0.782
+  },
+  {
+    "local": "packages/frontend-common/src/lib/basic-list-editor/basic-list-editor.component.scss",
+    "origin_repo": "angular-generics",
+    "origin_path": "app/basic-list-editor/basic-list-editor.component.scss",
+    "score": 0.952,
+    "path_score": 0.759,
+    "content_score": 1.0
+  },
+  {
+    "local": "packages/frontend-common/src/lib/basic-list-editor/basic-list-editor.component.spec.ts",
+    "origin_repo": "angular-generics",
+    "origin_path": "app/basic-list-editor/basic-list-editor.component.spec.ts",
+    "score": 0.954,
+    "path_score": 0.769,
+    "content_score": 1.0
+  },
+  {
+    "local": "packages/frontend-common/src/lib/basic-list-editor/basic-list-editor.component.ts",
+    "origin_repo": "angular-generics",
+    "origin_path": "app/basic-list-editor/basic-list-editor.component.ts",
+    "score": 0.836,
+    "path_score": 0.752,
+    "content_score": 0.857
+  },
+  {
+    "local": "packages/frontend-common/src/lib/check-cards-group/check-cards-group.component.html",
+    "origin_repo": "angular-generics",
+    "origin_path": "app/check-cards-group/check-cards-group.component.html",
+    "score": 0.618,
+    "path_score": 0.759,
+    "content_score": 0.583
+  },
+  {
+    "local": "packages/frontend-common/src/lib/check-cards-group/check-cards-group.component.scss",
+    "origin_repo": "angular-generics",
+    "origin_path": "app/check-cards-group/check-cards-group.component.scss",
+    "score": 0.952,
+    "path_score": 0.759,
+    "content_score": 1.0
+  },
+  {
+    "local": "packages/frontend-common/src/lib/check-cards-group/check-cards-group.component.spec.ts",
+    "origin_repo": "angular-generics",
+    "origin_path": "app/check-cards-group/check-cards-group.component.spec.ts",
+    "score": 0.954,
+    "path_score": 0.769,
+    "content_score": 1.0
+  },
+  {
+    "local": "packages/frontend-common/src/lib/check-cards-group/check-cards-group.component.ts",
+    "origin_repo": "angular-generics",
+    "origin_path": "app/check-cards-group/check-cards-group.component.ts",
+    "score": 0.914,
+    "path_score": 0.752,
+    "content_score": 0.955
+  },
+  {
+    "local": "packages/frontend-common/src/lib/confirmation-dialog/confirmation-dialog.component.html",
+    "origin_repo": "angular-generics",
+    "origin_path": "app/confirmation-dialog/confirmation-dialog.component.html",
+    "score": 0.86,
+    "path_score": 0.772,
+    "content_score": 0.882
+  },
+  {
+    "local": "packages/frontend-common/src/lib/confirmation-dialog/confirmation-dialog.component.spec.ts",
+    "origin_repo": "angular-generics",
+    "origin_path": "app/confirmation-dialog/confirmation-dialog.component.spec.ts",
+    "score": 0.956,
+    "path_score": 0.781,
+    "content_score": 1.0
+  },
+  {
+    "local": "packages/frontend-common/src/lib/confirmation-dialog/confirmation-dialog.component.ts",
+    "origin_repo": "angular-generics",
+    "origin_path": "app/confirmation-dialog/confirmation-dialog.component.ts",
+    "score": 0.8,
+    "path_score": 0.766,
+    "content_score": 0.808
+  },
+  {
+    "local": "packages/frontend-common/src/lib/dateFunctions.ts",
+    "origin_repo": "angular-generics",
+    "origin_path": "dateFunctions.ts",
+    "score": 0.898,
+    "path_score": 0.492,
+    "content_score": 1.0
+  },
+  {
+    "local": "packages/frontend-common/src/lib/downloads-list/downloads-list.component.html",
+    "origin_repo": "angular-generics",
+    "origin_path": "app/downloads-list/downloads-list.component.html",
+    "score": 0.593,
+    "path_score": 0.736,
+    "content_score": 0.557
+  },
+  {
+    "local": "packages/frontend-common/src/lib/downloads-list/downloads-list.component.scss",
+    "origin_repo": "angular-generics",
+    "origin_path": "app/downloads-list/downloads-list.component.scss",
+    "score": 0.947,
+    "path_score": 0.736,
+    "content_score": 1.0
+  },
+  {
+    "local": "packages/frontend-common/src/lib/downloads-list/downloads-list.component.spec.ts",
+    "origin_repo": "angular-generics",
+    "origin_path": "app/downloads-list/downloads-list.component.spec.ts",
+    "score": 0.95,
+    "path_score": 0.748,
+    "content_score": 1.0
+  },
+  {
+    "local": "packages/frontend-common/src/lib/downloads-list/downloads-list.component.ts",
+    "origin_repo": "angular-generics",
+    "origin_path": "app/downloads-list/downloads-list.component.ts",
+    "score": 0.861,
+    "path_score": 0.727,
+    "content_score": 0.895
+  },
+  {
+    "local": "packages/frontend-common/src/lib/dynamic-container/dynamic-container.directive.spec.ts",
+    "origin_repo": "angular-generics",
+    "origin_path": "app/dynamic-container/dynamic-container.directive.spec.ts",
+    "score": 0.954,
+    "path_score": 0.769,
+    "content_score": 1.0
+  },
+  {
+    "local": "packages/frontend-common/src/lib/dynamic-container/dynamic-container.directive.ts",
+    "origin_repo": "angular-generics",
+    "origin_path": "app/dynamic-container/dynamic-container.directive.ts",
+    "score": 0.773,
+    "path_score": 0.752,
+    "content_score": 0.779
+  },
+  {
+    "local": "packages/frontend-common/src/lib/environments/environment.prod.ts",
+    "origin_repo": "plant-monitor",
+    "origin_path": "src/environments/environment.prod.ts",
+    "score": 0.943,
+    "path_score": 0.713,
+    "content_score": 1.0
+  },
+  {
+    "local": "packages/frontend-common/src/lib/environments/environment.ts",
+    "origin_repo": "plant-monitor",
+    "origin_path": "src/environments/environment.ts",
+    "score": 0.936,
+    "path_score": 0.681,
+    "content_score": 1.0
+  },
+  {
+    "local": "packages/frontend-common/src/lib/expansion-list-editor/editorContainer.directive.ts",
+    "origin_repo": "angular-generics",
+    "origin_path": "app/expansion-list-editor/editorContainer.directive.ts",
+    "score": 0.904,
+    "path_score": 0.759,
+    "content_score": 0.94
+  },
+  {
+    "local": "packages/frontend-common/src/lib/expansion-list-editor/enums.ts",
+    "origin_repo": "angular-generics",
+    "origin_path": "app/expansion-list-editor/enums.ts",
+    "score": 0.932,
+    "path_score": 0.66,
+    "content_score": 1.0
+  },
+  {
+    "local": "packages/frontend-common/src/lib/expansion-list-editor/expandable-component.interface.ts",
+    "origin_repo": "angular-generics",
+    "origin_path": "app/expansion-list-editor/expandable-component.interface.ts",
+    "score": 0.955,
+    "path_score": 0.776,
+    "content_score": 1.0
+  },
+  {
+    "local": "packages/frontend-common/src/lib/expansion-list-editor/expandable-list-component.interface.ts",
+    "origin_repo": "angular-generics",
+    "origin_path": "app/expansion-list-editor/expandable-list-component.interface.ts",
+    "score": 0.958,
+    "path_score": 0.79,
+    "content_score": 1.0
+  },
+  {
+    "local": "packages/frontend-common/src/lib/expansion-list-editor/expansion-list-editor.component.html",
+    "origin_repo": "angular-generics",
+    "origin_path": "app/expansion-list-editor/expansion-list-editor.component.html",
+    "score": 0.577,
+    "path_score": 0.784,
+    "content_score": 0.525
+  },
+  {
+    "local": "packages/frontend-common/src/lib/expansion-list-editor/expansion-list-editor.component.scss",
+    "origin_repo": "angular-generics",
+    "origin_path": "app/expansion-list-editor/expansion-list-editor.component.scss",
+    "score": 0.957,
+    "path_score": 0.784,
+    "content_score": 1.0
+  },
+  {
+    "local": "packages/frontend-common/src/lib/expansion-list-editor/expansion-list-editor.component.spec.ts",
+    "origin_repo": "angular-generics",
+    "origin_path": "app/expansion-list-editor/expansion-list-editor.component.spec.ts",
+    "score": 0.958,
+    "path_score": 0.792,
+    "content_score": 1.0
+  },
+  {
+    "local": "packages/frontend-common/src/lib/expansion-list-editor/expansion-list-editor.component.ts",
+    "origin_repo": "angular-generics",
+    "origin_path": "app/expansion-list-editor/expansion-list-editor.component.ts",
+    "score": 0.898,
+    "path_score": 0.779,
+    "content_score": 0.928
+  },
+  {
+    "local": "packages/frontend-common/src/lib/file-download/file-download.service.ts",
+    "origin_repo": "angular-generics",
+    "origin_path": "app/file-download/file-download.service.ts",
+    "score": 0.942,
+    "path_score": 0.708,
+    "content_score": 1.0
+  },
+  {
+    "local": "packages/frontend-common/src/lib/filters/filter-handler/filter-handler.component.html",
+    "origin_repo": "angular-generics",
+    "origin_path": "app/filters/filter-handler/filter-handler.component.html",
+    "score": 0.953,
+    "path_score": 0.766,
+    "content_score": 1.0
+  },
+  {
+    "local": "packages/frontend-common/src/lib/filters/filter-handler/filter-handler.component.scss",
+    "origin_repo": "angular-generics",
+    "origin_path": "app/filters/filter-handler/filter-handler.component.scss",
+    "score": 0.953,
+    "path_score": 0.766,
+    "content_score": 1.0
+  },
+  {
+    "local": "packages/frontend-common/src/lib/filters/filter-handler/filter-handler.component.spec.ts",
+    "origin_repo": "angular-generics",
+    "origin_path": "app/filters/filter-handler/filter-handler.component.spec.ts",
+    "score": 0.955,
+    "path_score": 0.776,
+    "content_score": 1.0
+  },
+  {
+    "local": "packages/frontend-common/src/lib/filters/filter-handler/filter-handler.component.ts",
+    "origin_repo": "angular-generics",
+    "origin_path": "app/filters/filter-handler/filter-handler.component.ts",
+    "score": 0.734,
+    "path_score": 0.759,
+    "content_score": 0.728
+  },
+  {
+    "local": "packages/frontend-common/src/lib/floating-component.ts",
+    "origin_repo": "angular-generics",
+    "origin_path": "app/floating-component.ts",
+    "score": 0.916,
+    "path_score": 0.582,
+    "content_score": 1.0
+  },
+  {
+    "local": "packages/frontend-common/src/lib/header/header.component.html",
+    "origin_repo": "plant-monitor",
+    "origin_path": "src/app/header/header.component.html",
+    "score": 0.671,
+    "path_score": 0.68,
+    "content_score": 0.669
+  },
+  {
+    "local": "packages/frontend-common/src/lib/header/header.component.scss",
+    "origin_repo": "plant-monitor",
+    "origin_path": "src/app/header/header.component.scss",
+    "score": 0.936,
+    "path_score": 0.68,
+    "content_score": 1.0
+  },
+  {
+    "local": "packages/frontend-common/src/lib/header/header.component.spec.ts",
+    "origin_repo": "plant-monitor",
+    "origin_path": "src/app/header/header.component.spec.ts",
+    "score": 0.93,
+    "path_score": 0.699,
+    "content_score": 0.988
+  },
+  {
+    "local": "packages/frontend-common/src/lib/header/header.component.ts",
+    "origin_repo": "plant-monitor",
+    "origin_path": "src/app/header/header.component.ts",
+    "score": 0.623,
+    "path_score": 0.667,
+    "content_score": 0.612
+  },
+  {
+    "local": "packages/frontend-common/src/lib/interceptors/header.interceptor.ts",
+    "origin_repo": "plant-monitor",
+    "origin_path": "src/app/interceptors/header.interceptor.ts",
+    "score": 0.942,
+    "path_score": 0.716,
+    "content_score": 0.999
+  },
+  {
+    "local": "packages/frontend-common/src/lib/interceptors/http-error.interceptor.ts",
+    "origin_repo": "plant-monitor",
+    "origin_path": "src/app/interceptors/http-error.interceptor.ts",
+    "score": 0.875,
+    "path_score": 0.735,
+    "content_score": 0.911
+  },
+  {
+    "local": "packages/frontend-common/src/lib/models/class-resolver.service.spec.ts",
+    "origin_repo": "angular-generics",
+    "origin_path": "models/class-resolver.service.spec.ts",
+    "score": 0.938,
+    "path_score": 0.692,
+    "content_score": 1.0
+  },
+  {
+    "local": "packages/frontend-common/src/lib/models/class-resolver.service.ts",
+    "origin_repo": "angular-generics",
+    "origin_path": "models/class-resolver.service.ts",
+    "score": 0.932,
+    "path_score": 0.66,
+    "content_score": 1.0
+  },
+  {
+    "local": "packages/frontend-common/src/lib/models/component-resolver.service.spec.ts",
+    "origin_repo": "angular-generics",
+    "origin_path": "models/component-resolver.service.spec.ts",
+    "score": 0.943,
+    "path_score": 0.713,
+    "content_score": 1.0
+  },
+  {
+    "local": "packages/frontend-common/src/lib/models/component-resolver.service.ts",
+    "origin_repo": "angular-generics",
+    "origin_path": "models/component-resolver.service.ts",
+    "score": 0.937,
+    "path_score": 0.686,
+    "content_score": 1.0
+  },
+  {
+    "local": "packages/frontend-common/src/lib/models/data.service.ts",
+    "origin_repo": "angular-generics",
+    "origin_path": "models/data.service.ts",
+    "score": 0.907,
+    "path_score": 0.571,
+    "content_score": 0.991
+  },
+  {
+    "local": "packages/frontend-common/src/lib/models/decorators/availableForMapping.decorator.ts",
+    "origin_repo": "angular-generics",
+    "origin_path": "models/decorators/availableForMapping.decorator.ts",
+    "score": 0.95,
+    "path_score": 0.752,
+    "content_score": 1.0
+  },
+  {
+    "local": "packages/frontend-common/src/lib/models/decorators/registeredAsChildClass.decorator.ts",
+    "origin_repo": "angular-generics",
+    "origin_path": "models/decorators/registeredAsChildClass.decorator.ts",
+    "score": 0.953,
+    "path_score": 0.763,
+    "content_score": 1.0
+  },
+  {
+    "local": "packages/frontend-common/src/lib/models/decorators/registeredForGui.decorator.ts",
+    "origin_repo": "angular-generics",
+    "origin_path": "models/decorators/registeredForGui.decorator.ts",
+    "score": 0.948,
+    "path_score": 0.74,
+    "content_score": 1.0
+  },
+  {
+    "local": "packages/frontend-common/src/lib/models/decorators/withClassId.decorator.ts",
+    "origin_repo": "angular-generics",
+    "origin_path": "models/decorators/withClassId.decorator.ts",
+    "score": 0.944,
+    "path_score": 0.718,
+    "content_score": 1.0
+  },
+  {
+    "local": "packages/frontend-common/src/lib/models/decorators/withDiscriminator.decorator.ts",
+    "origin_repo": "angular-generics",
+    "origin_path": "models/decorators/withDiscriminator.decorator.ts",
+    "score": 0.949,
+    "path_score": 0.744,
+    "content_score": 1.0
+  },
+  {
+    "local": "packages/frontend-common/src/lib/models/interfaces/taskState.interface.ts",
+    "origin_repo": "angular-generics",
+    "origin_path": "models/interfaces/taskState.interface.ts",
+    "score": 0.942,
+    "path_score": 0.708,
+    "content_score": 1.0
+  },
+  {
+    "local": "packages/frontend-common/src/lib/models/registration-req/registration-req.model.ts",
+    "origin_repo": "angular-generics",
+    "origin_path": "models/registration-req/registration-req.model.ts",
+    "score": 0.846,
+    "path_score": 0.748,
+    "content_score": 0.871
+  },
+  {
+    "local": "packages/frontend-common/src/lib/models/registration-req/registration-req.service.ts",
+    "origin_repo": "angular-generics",
+    "origin_path": "models/registration-req/registration-req.service.ts",
+    "score": 0.951,
+    "path_score": 0.756,
+    "content_score": 1.0
+  },
+  {
+    "local": "packages/frontend-common/src/lib/models/user/user.model.ts",
+    "origin_repo": "angular-generics",
+    "origin_path": "models/user/user.model.ts",
+    "score": 0.92,
+    "path_score": 0.602,
+    "content_score": 1.0
+  },
+  {
+    "local": "packages/frontend-common/src/lib/models/user/user.service.ts",
+    "origin_repo": "angular-generics",
+    "origin_path": "models/user/user.service.ts",
+    "score": 0.924,
+    "path_score": 0.621,
+    "content_score": 1.0
+  },
+  {
+    "local": "packages/frontend-common/src/lib/ms-to-time-str.pipe.spec.ts",
+    "origin_repo": "angular-generics",
+    "origin_path": "app/ms-to-time-str.pipe.spec.ts",
+    "score": 0.927,
+    "path_score": 0.637,
+    "content_score": 1.0
+  },
+  {
+    "local": "packages/frontend-common/src/lib/ms-to-time-str.pipe.ts",
+    "origin_repo": "angular-generics",
+    "origin_path": "app/ms-to-time-str.pipe.ts",
+    "score": 0.879,
+    "path_score": 0.593,
+    "content_score": 0.951
+  },
+  {
+    "local": "packages/frontend-common/src/lib/multi-slider/multi-slider.component.spec.ts",
+    "origin_repo": "angular-generics",
+    "origin_path": "app/multi-slider/multi-slider.component.spec.ts",
+    "score": 0.946,
+    "path_score": 0.732,
+    "content_score": 1.0
+  },
+  {
+    "local": "packages/frontend-common/src/lib/multi-slider/multi-slider.component.ts",
+    "origin_repo": "angular-generics",
+    "origin_path": "app/multi-slider/multi-slider.component.ts",
+    "score": 0.892,
+    "path_score": 0.708,
+    "content_score": 0.938
+  },
+  {
+    "local": "packages/frontend-common/src/lib/pagination/paginated-datasource.ts",
+    "origin_repo": "angular-generics",
+    "origin_path": "app/pagination/paginated-datasource.ts",
+    "score": 0.937,
+    "path_score": 0.686,
+    "content_score": 1.0
+  },
+  {
+    "local": "packages/frontend-common/src/lib/pagination/pagination.types.ts",
+    "origin_repo": "angular-generics",
+    "origin_path": "app/pagination/pagination.types.ts",
+    "score": 0.932,
+    "path_score": 0.66,
+    "content_score": 1.0
+  },
+  {
+    "local": "packages/frontend-common/src/lib/registration-req/registration-req-list/registration-req-list.component.html",
+    "origin_repo": "angular-generics",
+    "origin_path": "app/registration-req/registration-req-list/registration-req-list.component.html",
+    "score": 0.947,
+    "path_score": 0.824,
+    "content_score": 0.978
+  },
+  {
+    "local": "packages/frontend-common/src/lib/registration-req/registration-req-list/registration-req-list.component.scss",
+    "origin_repo": "angular-generics",
+    "origin_path": "app/registration-req/registration-req-list/registration-req-list.component.scss",
+    "score": 0.965,
+    "path_score": 0.824,
+    "content_score": 1.0
+  },
+  {
+    "local": "packages/frontend-common/src/lib/registration-req/registration-req-list/registration-req-list.component.spec.ts",
+    "origin_repo": "angular-generics",
+    "origin_path": "app/registration-req/registration-req-list/registration-req-list.component.spec.ts",
+    "score": 0.966,
+    "path_score": 0.829,
+    "content_score": 1.0
+  },
+  {
+    "local": "packages/frontend-common/src/lib/registration-req/registration-req-list/registration-req-list.component.ts",
+    "origin_repo": "angular-generics",
+    "origin_path": "app/registration-req/registration-req-list/registration-req-list.component.ts",
+    "score": 0.938,
+    "path_score": 0.82,
+    "content_score": 0.967
+  },
+  {
+    "local": "packages/frontend-common/src/lib/reports/async-tasks.service.spec.ts",
+    "origin_repo": "angular-generics",
+    "origin_path": "reports/async-tasks.service.spec.ts",
+    "score": 0.936,
+    "path_score": 0.68,
+    "content_score": 1.0
+  },
+  {
+    "local": "packages/frontend-common/src/lib/reports/async-tasks.service.ts",
+    "origin_repo": "angular-generics",
+    "origin_path": "reports/async-tasks.service.ts",
+    "score": 0.881,
+    "path_score": 0.645,
+    "content_score": 0.939
+  },
+  {
+    "local": "packages/frontend-common/src/lib/reports/reports.service.spec.ts",
+    "origin_repo": "angular-generics",
+    "origin_path": "reports/reports.service.spec.ts",
+    "score": 0.931,
+    "path_score": 0.653,
+    "content_score": 1.0
+  },
+  {
+    "local": "packages/frontend-common/src/lib/reports/reports.service.ts",
+    "origin_repo": "angular-generics",
+    "origin_path": "reports/reports.service.ts",
+    "score": 0.92,
+    "path_score": 0.612,
+    "content_score": 0.997
+  },
+  {
+    "local": "packages/frontend-common/src/lib/services/backgroundTasks/background-tasks.service.spec.ts",
+    "origin_repo": "angular-generics",
+    "origin_path": "app/services/backgroundTasks/background-tasks.service.spec.ts",
+    "score": 0.956,
+    "path_score": 0.781,
+    "content_score": 1.0
+  },
+  {
+    "local": "packages/frontend-common/src/lib/services/backgroundTasks/background-tasks.service.ts",
+    "origin_repo": "angular-generics",
+    "origin_path": "app/services/backgroundTasks/background-tasks.service.ts",
+    "score": 0.951,
+    "path_score": 0.766,
+    "content_score": 0.997
+  },
+  {
+    "local": "packages/frontend-common/src/lib/shared/guards/auth.guard.ts",
+    "origin_repo": "plant-monitor",
+    "origin_path": "src/app/shared/guards/auth.guard.ts",
+    "score": 0.935,
+    "path_score": 0.674,
+    "content_score": 1.0
+  },
+  {
+    "local": "packages/frontend-common/src/lib/shared/guards/index.ts",
+    "origin_repo": "plant-monitor",
+    "origin_path": "src/app/shared/guards/index.ts",
+    "score": 0.927,
+    "path_score": 0.635,
+    "content_score": 1.0
+  },
+  {
+    "local": "packages/frontend-common/src/lib/shared/interfaces/index.ts",
+    "origin_repo": "plant-monitor",
+    "origin_path": "src/app/shared/interfaces/index.ts",
+    "score": 0.933,
+    "path_score": 0.667,
+    "content_score": 1.0
+  },
+  {
+    "local": "packages/frontend-common/src/lib/shared/interfaces/user.interface.ts",
+    "origin_repo": "plant-monitor",
+    "origin_path": "src/app/shared/interfaces/user.interface.ts",
+    "score": 0.944,
+    "path_score": 0.721,
+    "content_score": 1.0
+  },
+  {
+    "local": "packages/frontend-common/src/lib/shared/services/auth/auth.service.spec.ts",
+    "origin_repo": "plant-monitor",
+    "origin_path": "src/app/shared/services/auth/auth.service.spec.ts",
+    "score": 0.95,
+    "path_score": 0.748,
+    "content_score": 1.0
+  },
+  {
+    "local": "packages/frontend-common/src/lib/shared/services/auth/auth.service.ts",
+    "origin_repo": "plant-monitor",
+    "origin_path": "src/app/shared/services/auth/auth.service.ts",
+    "score": 0.943,
+    "path_score": 0.726,
+    "content_score": 0.997
+  },
+  {
+    "local": "packages/frontend-common/src/lib/shared/services/auth/token.storage.ts",
+    "origin_repo": "plant-monitor",
+    "origin_path": "src/app/shared/services/auth/token.storage.ts",
+    "score": 0.946,
+    "path_score": 0.73,
+    "content_score": 1.0
+  },
+  {
+    "local": "packages/frontend-common/src/lib/shared/services/index.ts",
+    "origin_repo": "plant-monitor",
+    "origin_path": "src/app/shared/services/index.ts",
+    "score": 0.93,
+    "path_score": 0.652,
+    "content_score": 1.0
+  },
+  {
+    "local": "packages/frontend-common/src/lib/shared/services/shared-config/shared-config.service.ts",
+    "origin_repo": "angular-generics",
+    "origin_path": "app/shared/services/shared-config/shared-config.service.ts",
+    "score": 0.954,
+    "path_score": 0.772,
+    "content_score": 1.0
+  },
+  {
+    "local": "packages/frontend-common/src/lib/static-html.directive.ts",
+    "origin_repo": "angular-generics",
+    "origin_path": "app/static-html.directive.ts",
+    "score": 0.907,
+    "path_score": 0.612,
+    "content_score": 0.981
+  },
+  {
+    "local": "packages/frontend-common/src/lib/tasks-drop-down-viewer/tasks-drop-down-viewer.component.html",
+    "origin_repo": "angular-generics",
+    "origin_path": "app/tasks-drop-down-viewer/tasks-drop-down-viewer.component.html",
+    "score": 0.643,
+    "path_score": 0.79,
+    "content_score": 0.607
+  },
+  {
+    "local": "packages/frontend-common/src/lib/tasks-drop-down-viewer/tasks-drop-down-viewer.component.scss",
+    "origin_repo": "angular-generics",
+    "origin_path": "app/tasks-drop-down-viewer/tasks-drop-down-viewer.component.scss",
+    "score": 0.958,
+    "path_score": 0.79,
+    "content_score": 1.0
+  },
+  {
+    "local": "packages/frontend-common/src/lib/tasks-drop-down-viewer/tasks-drop-down-viewer.component.spec.ts",
+    "origin_repo": "angular-generics",
+    "origin_path": "app/tasks-drop-down-viewer/tasks-drop-down-viewer.component.spec.ts",
+    "score": 0.96,
+    "path_score": 0.798,
+    "content_score": 1.0
+  },
+  {
+    "local": "packages/frontend-common/src/lib/tasks-drop-down-viewer/tasks-drop-down-viewer.component.ts",
+    "origin_repo": "angular-generics",
+    "origin_path": "app/tasks-drop-down-viewer/tasks-drop-down-viewer.component.ts",
+    "score": 0.85,
+    "path_score": 0.784,
+    "content_score": 0.867
+  },
+  {
+    "local": "packages/frontend-common/src/lib/users/user-list/user-list.component.html",
+    "origin_repo": "angular-generics",
+    "origin_path": "app/users/user-list/user-list.component.html",
+    "score": 0.906,
+    "path_score": 0.718,
+    "content_score": 0.953
+  },
+  {
+    "local": "packages/frontend-common/src/lib/users/user-list/user-list.component.scss",
+    "origin_repo": "angular-generics",
+    "origin_path": "app/users/user-list/user-list.component.scss",
+    "score": 0.944,
+    "path_score": 0.718,
+    "content_score": 1.0
+  },
+  {
+    "local": "packages/frontend-common/src/lib/users/user-list/user-list.component.spec.ts",
+    "origin_repo": "angular-generics",
+    "origin_path": "app/users/user-list/user-list.component.spec.ts",
+    "score": 0.946,
+    "path_score": 0.732,
+    "content_score": 1.0
+  },
+  {
+    "local": "packages/frontend-common/src/lib/users/user-list/user-list.component.ts",
+    "origin_repo": "angular-generics",
+    "origin_path": "app/users/user-list/user-list.component.ts",
+    "score": 0.903,
+    "path_score": 0.708,
+    "content_score": 0.952
+  },
+  {
+    "local": "packages/frontend-common/src/lib/users/user-new-edit/user-new-edit.component.html",
+    "origin_repo": "angular-generics",
+    "origin_path": "app/users/user-new-edit/user-new-edit.component.html",
+    "score": 0.798,
+    "path_score": 0.752,
+    "content_score": 0.809
+  },
+  {
+    "local": "packages/frontend-common/src/lib/users/user-new-edit/user-new-edit.component.scss",
+    "origin_repo": "angular-generics",
+    "origin_path": "app/users/user-new-edit/user-new-edit.component.scss",
+    "score": 0.95,
+    "path_score": 0.752,
+    "content_score": 1.0
+  },
+  {
+    "local": "packages/frontend-common/src/lib/users/user-new-edit/user-new-edit.component.spec.ts",
+    "origin_repo": "angular-generics",
+    "origin_path": "app/users/user-new-edit/user-new-edit.component.spec.ts",
+    "score": 0.953,
+    "path_score": 0.763,
+    "content_score": 1.0
+  },
+  {
+    "local": "packages/frontend-common/src/lib/users/user-new-edit/user-new-edit.component.ts",
+    "origin_repo": "angular-generics",
+    "origin_path": "app/users/user-new-edit/user-new-edit.component.ts",
+    "score": 0.924,
+    "path_score": 0.744,
+    "content_score": 0.969
+  },
+  {
+    "local": "server/config/express.js",
+    "origin_repo": "plant-monitor",
+    "origin_path": "server/config/express.js",
+    "score": 0.775,
+    "path_score": 1.0,
+    "content_score": 0.718
+  },
+  {
+    "local": "server/config/memory-usage.js",
+    "origin_repo": "node-mean-server-generics",
+    "origin_path": "config/memory-usage.js",
+    "score": 0.848,
+    "path_score": 0.863,
+    "content_score": 0.844
+  },
+  {
+    "local": "server/config/mongoose.js",
+    "origin_repo": "plant-monitor",
+    "origin_path": "server/config/mongoose.js",
+    "score": 0.944,
+    "path_score": 1.0,
+    "content_score": 0.93
+  },
+  {
+    "local": "server/config/mongoose.plugins.js",
+    "origin_repo": "node-mean-server-generics",
+    "origin_path": "config/mongoose.plugins.js",
+    "score": 0.976,
+    "path_score": 0.881,
+    "content_score": 1.0
+  },
+  {
+    "local": "server/config/passport.js",
+    "origin_repo": "plant-monitor",
+    "origin_path": "server/config/passport.js",
+    "score": 0.974,
+    "path_score": 1.0,
+    "content_score": 0.968
+  },
+  {
+    "local": "server/config/swagger.json",
+    "origin_repo": "plant-monitor",
+    "origin_path": "server/config/swagger.json",
+    "score": 0.898,
+    "path_score": 1.0,
+    "content_score": 0.873
+  },
+  {
+    "local": "server/controllers/shared-config.controller.js",
+    "origin_repo": "node-mean-server-generics",
+    "origin_path": "controllers/shared-config.controller.js",
+    "score": 0.942,
+    "path_score": 0.918,
+    "content_score": 0.948
+  },
+  {
+    "local": "server/index.js",
+    "origin_repo": "plant-monitor",
+    "origin_path": "server/index.js",
+    "score": 0.912,
+    "path_score": 1.0,
+    "content_score": 0.889
+  },
+  {
+    "local": "server/routes/auth.route.js",
+    "origin_repo": "plant-monitor",
+    "origin_path": "server/routes/auth.route.js",
+    "score": 0.882,
+    "path_score": 1.0,
+    "content_score": 0.852
+  },
+  {
+    "local": "server/routes/file-download.route.js",
+    "origin_repo": "node-mean-server-generics",
+    "origin_path": "routes/file-download.route.js",
+    "score": 0.952,
+    "path_score": 0.892,
+    "content_score": 0.966
+  },
+  {
+    "local": "server/routes/registration-req.route.js",
+    "origin_repo": "node-mean-server-generics",
+    "origin_path": "routes/registration-req.route.js",
+    "score": 0.667,
+    "path_score": 0.901,
+    "content_score": 0.609
+  },
+  {
+    "local": "server/routes/shared-config.route.js",
+    "origin_repo": "plant-monitor",
+    "origin_path": "server/routes/shared-config.route.js",
+    "score": 1.0,
+    "path_score": 1.0,
+    "content_score": 1.0
+  },
+  {
+    "local": "src/_settings.scss",
+    "origin_repo": "plant-monitor",
+    "origin_path": "src/_settings.scss",
+    "score": 1.0,
+    "path_score": 1.0,
+    "content_score": 1.0
+  },
+  {
+    "local": "src/app/app.config.ts",
+    "origin_repo": "plant-monitor",
+    "origin_path": "src/app/app.config.ts",
+    "score": 0.739,
+    "path_score": 1.0,
+    "content_score": 0.674
+  },
+  {
+    "local": "src/app/app.routes.ts",
+    "origin_repo": "plant-monitor",
+    "origin_path": "src/app/app.routes.ts",
+    "score": 0.575,
+    "path_score": 1.0,
+    "content_score": 0.469
+  },
+  {
+    "local": "src/assets/.gitkeep",
+    "origin_repo": "plant-monitor",
+    "origin_path": "src/assets/.gitkeep",
+    "score": 1.0,
+    "path_score": 1.0,
+    "content_score": 1.0
+  },
+  {
+    "local": "src/assets/icons/add-blue.svg",
+    "origin_repo": "plant-monitor",
+    "origin_path": "src/assets/icons/add-blue.svg",
+    "score": 1.0,
+    "path_score": 1.0,
+    "content_score": 1.0
+  },
+  {
+    "local": "src/assets/icons/add.svg",
+    "origin_repo": "plant-monitor",
+    "origin_path": "src/assets/icons/add.svg",
+    "score": 1.0,
+    "path_score": 1.0,
+    "content_score": 1.0
+  },
+  {
+    "local": "src/assets/icons/air-station.svg",
+    "origin_repo": "plant-monitor",
+    "origin_path": "src/assets/icons/air-station.svg",
+    "score": 1.0,
+    "path_score": 1.0,
+    "content_score": 1.0
+  },
+  {
+    "local": "src/assets/icons/airplane-front-view.svg",
+    "origin_repo": "plant-monitor",
+    "origin_path": "src/assets/icons/airplane-front-view.svg",
+    "score": 1.0,
+    "path_score": 1.0,
+    "content_score": 1.0
+  },
+  {
+    "local": "src/assets/icons/balloon.svg",
+    "origin_repo": "plant-monitor",
+    "origin_path": "src/assets/icons/balloon.svg",
+    "score": 1.0,
+    "path_score": 1.0,
+    "content_score": 1.0
+  },
+  {
+    "local": "src/assets/icons/boat.svg",
+    "origin_repo": "plant-monitor",
+    "origin_path": "src/assets/icons/boat.svg",
+    "score": 1.0,
+    "path_score": 1.0,
+    "content_score": 1.0
+  },
+  {
+    "local": "src/assets/icons/car.svg",
+    "origin_repo": "plant-monitor",
+    "origin_path": "src/assets/icons/car.svg",
+    "score": 1.0,
+    "path_score": 1.0,
+    "content_score": 1.0
+  },
+  {
+    "local": "src/assets/icons/cargo-ship.svg",
+    "origin_repo": "plant-monitor",
+    "origin_path": "src/assets/icons/cargo-ship.svg",
+    "score": 1.0,
+    "path_score": 1.0,
+    "content_score": 1.0
+  },
+  {
+    "local": "src/assets/icons/catamaran.svg",
+    "origin_repo": "plant-monitor",
+    "origin_path": "src/assets/icons/catamaran.svg",
+    "score": 1.0,
+    "path_score": 1.0,
+    "content_score": 1.0
+  },
+  {
+    "local": "src/assets/icons/clone.svg",
+    "origin_repo": "plant-monitor",
+    "origin_path": "src/assets/icons/clone.svg",
+    "score": 1.0,
+    "path_score": 1.0,
+    "content_score": 1.0
+  },
+  {
+    "local": "src/assets/icons/close.svg",
+    "origin_repo": "plant-monitor",
+    "origin_path": "src/assets/icons/close.svg",
+    "score": 1.0,
+    "path_score": 1.0,
+    "content_score": 1.0
+  },
+  {
+    "local": "src/assets/icons/convertible.svg",
+    "origin_repo": "plant-monitor",
+    "origin_path": "src/assets/icons/convertible.svg",
+    "score": 1.0,
+    "path_score": 1.0,
+    "content_score": 1.0
+  },
+  {
+    "local": "src/assets/icons/delete.svg",
+    "origin_repo": "plant-monitor",
+    "origin_path": "src/assets/icons/delete.svg",
+    "score": 1.0,
+    "path_score": 1.0,
+    "content_score": 1.0
+  },
+  {
+    "local": "src/assets/icons/drone.svg",
+    "origin_repo": "plant-monitor",
+    "origin_path": "src/assets/icons/drone.svg",
+    "score": 1.0,
+    "path_score": 1.0,
+    "content_score": 1.0
+  },
+  {
+    "local": "src/assets/icons/fighter-plane.svg",
+    "origin_repo": "plant-monitor",
+    "origin_path": "src/assets/icons/fighter-plane.svg",
+    "score": 1.0,
+    "path_score": 1.0,
+    "content_score": 1.0
+  },
+  {
+    "local": "src/assets/icons/fire-truck.svg",
+    "origin_repo": "plant-monitor",
+    "origin_path": "src/assets/icons/fire-truck.svg",
+    "score": 1.0,
+    "path_score": 1.0,
+    "content_score": 1.0
+  },
+  {
+    "local": "src/assets/icons/horseback-riding.svg",
+    "origin_repo": "plant-monitor",
+    "origin_path": "src/assets/icons/horseback-riding.svg",
+    "score": 1.0,
+    "path_score": 1.0,
+    "content_score": 1.0
+  },
+  {
+    "local": "src/assets/icons/motorcycle.svg",
+    "origin_repo": "plant-monitor",
+    "origin_path": "src/assets/icons/motorcycle.svg",
+    "score": 1.0,
+    "path_score": 1.0,
+    "content_score": 1.0
+  },
+  {
+    "local": "src/assets/icons/railcar.svg",
+    "origin_repo": "plant-monitor",
+    "origin_path": "src/assets/icons/railcar.svg",
+    "score": 1.0,
+    "path_score": 1.0,
+    "content_score": 1.0
+  },
+  {
+    "local": "src/assets/icons/railroad-train.svg",
+    "origin_repo": "plant-monitor",
+    "origin_path": "src/assets/icons/railroad-train.svg",
+    "score": 1.0,
+    "path_score": 1.0,
+    "content_score": 1.0
+  },
+  {
+    "local": "src/assets/icons/rocket-boot.svg",
+    "origin_repo": "plant-monitor",
+    "origin_path": "src/assets/icons/rocket-boot.svg",
+    "score": 1.0,
+    "path_score": 1.0,
+    "content_score": 1.0
+  },
+  {
+    "local": "src/assets/icons/sailing-boat.svg",
+    "origin_repo": "plant-monitor",
+    "origin_path": "src/assets/icons/sailing-boat.svg",
+    "score": 1.0,
+    "path_score": 1.0,
+    "content_score": 1.0
+  },
+  {
+    "local": "src/assets/icons/segway.svg",
+    "origin_repo": "plant-monitor",
+    "origin_path": "src/assets/icons/segway.svg",
+    "score": 1.0,
+    "path_score": 1.0,
+    "content_score": 1.0
+  },
+  {
+    "local": "src/assets/icons/shuttle.svg",
+    "origin_repo": "plant-monitor",
+    "origin_path": "src/assets/icons/shuttle.svg",
+    "score": 1.0,
+    "path_score": 1.0,
+    "content_score": 1.0
+  },
+  {
+    "local": "src/assets/icons/space-shuttle.svg",
+    "origin_repo": "plant-monitor",
+    "origin_path": "src/assets/icons/space-shuttle.svg",
+    "score": 1.0,
+    "path_score": 1.0,
+    "content_score": 1.0
+  },
+  {
+    "local": "src/assets/icons/steam-engine.svg",
+    "origin_repo": "plant-monitor",
+    "origin_path": "src/assets/icons/steam-engine.svg",
+    "score": 1.0,
+    "path_score": 1.0,
+    "content_score": 1.0
+  },
+  {
+    "local": "src/assets/icons/suv.svg",
+    "origin_repo": "plant-monitor",
+    "origin_path": "src/assets/icons/suv.svg",
+    "score": 1.0,
+    "path_score": 1.0,
+    "content_score": 1.0
+  },
+  {
+    "local": "src/assets/icons/tour-bus.svg",
+    "origin_repo": "plant-monitor",
+    "origin_path": "src/assets/icons/tour-bus.svg",
+    "score": 1.0,
+    "path_score": 1.0,
+    "content_score": 1.0
+  },
+  {
+    "local": "src/assets/icons/tow-truck.svg",
+    "origin_repo": "plant-monitor",
+    "origin_path": "src/assets/icons/tow-truck.svg",
+    "score": 1.0,
+    "path_score": 1.0,
+    "content_score": 1.0
+  },
+  {
+    "local": "src/assets/icons/transportation.svg",
+    "origin_repo": "plant-monitor",
+    "origin_path": "src/assets/icons/transportation.svg",
+    "score": 1.0,
+    "path_score": 1.0,
+    "content_score": 1.0
+  },
+  {
+    "local": "src/assets/icons/trolleybus.svg",
+    "origin_repo": "plant-monitor",
+    "origin_path": "src/assets/icons/trolleybus.svg",
+    "score": 1.0,
+    "path_score": 1.0,
+    "content_score": 1.0
+  },
+  {
+    "local": "src/assets/icons/water-transportation.svg",
+    "origin_repo": "plant-monitor",
+    "origin_path": "src/assets/icons/water-transportation.svg",
+    "score": 1.0,
+    "path_score": 1.0,
+    "content_score": 1.0
+  },
+  {
+    "local": "src/assets/logo.png",
+    "origin_repo": "plant-monitor",
+    "origin_path": "src/assets/logo.png",
+    "score": 1.0,
+    "path_score": 1.0,
+    "content_score": 0.0
+  },
+  {
+    "local": "src/favicon.ico",
+    "origin_repo": "plant-monitor",
+    "origin_path": "src/favicon.ico",
+    "score": 1.0,
+    "path_score": 1.0,
+    "content_score": 0.0
+  },
+  {
+    "local": "src/index.html",
+    "origin_repo": "plant-monitor",
+    "origin_path": "src/index.html",
+    "score": 0.918,
+    "path_score": 1.0,
+    "content_score": 0.898
+  },
+  {
+    "local": "src/main.ts",
+    "origin_repo": "plant-monitor",
+    "origin_path": "src/main.ts",
+    "score": 0.937,
+    "path_score": 1.0,
+    "content_score": 0.921
+  },
+  {
+    "local": "src/polyfills.ts",
+    "origin_repo": "plant-monitor",
+    "origin_path": "src/polyfills.ts",
+    "score": 1.0,
+    "path_score": 1.0,
+    "content_score": 1.0
+  },
+  {
+    "local": "src/styles.scss",
+    "origin_repo": "plant-monitor",
+    "origin_path": "src/styles.scss",
+    "score": 0.756,
+    "path_score": 1.0,
+    "content_score": 0.695
+  },
+  {
+    "local": "tsconfig.app.json",
+    "origin_repo": "plant-monitor",
+    "origin_path": "tsconfig.app.json",
+    "score": 0.882,
+    "path_score": 1.0,
+    "content_score": 0.852
+  }
+]
