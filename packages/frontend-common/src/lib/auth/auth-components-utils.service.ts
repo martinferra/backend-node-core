@@ -5,7 +5,7 @@ import {
   ValidationErrors,
   Validators,
 } from '@angular/forms';
-import { AuthService, UserInfo } from '@app/shared/services/auth/auth.service';
+import { AuthService, UserInfo } from '@martinferra/frontend-common/shared/services/auth/auth.service';
 import { map, Observable, of } from 'rxjs';
 import {
   AppRegExp,
@@ -13,7 +13,7 @@ import {
   ControlValidatorEntry,
   CustomValidators,
   FormValidator,
-} from '@app/appValidators';
+} from '@martinferra/frontend-common/appValidators';
 
 @Injectable({
   providedIn: 'root',

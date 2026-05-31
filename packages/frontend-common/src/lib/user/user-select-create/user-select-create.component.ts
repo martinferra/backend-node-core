@@ -5,7 +5,7 @@ import { CommonModule } from '@angular/common';
 
 import { Observable } from 'rxjs';
 import { UserService } from '../../models/user/user.service';
-import { UserNewEditDialogWrapperComponent } from '@app/users/user-new-edit/user-new-edit.component';
+import { UserNewEditDialogWrapperComponent } from '@martinferra/frontend-common/users/user-new-edit/user-new-edit.component';
 import { User } from '../../models/user/user.model';
 import { BasicAutocompletedInputComponent } from '../../basic-autocompleted-input/basic-autocompleted-input.component';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';

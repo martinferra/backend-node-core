@@ -8,8 +8,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatIconModule } from '@angular/material/icon';
 
-import { AuthService, UserInfo } from '@app/shared/services';
-import { ControlValidator, FormValidator } from '@app/appValidators';
+import { AuthService, UserInfo } from '@martinferra/frontend-common/shared/services';
+import { ControlValidator, FormValidator } from '@martinferra/frontend-common/appValidators';
 import { environment } from '../../environments/environment';
 import { AuthComponentsUtilsService } from '../auth-components-utils.service';
 

@@ -5,7 +5,7 @@ import { Observable, of } from 'rxjs';
 import { catchError, concatMap, map, startWith, tap } from 'rxjs/operators';
 import { TaskState } from '../models/interfaces/taskState.interface';
 import { TaskType, AsyncTasksService } from './async-tasks.service';
-import { FileDownloadService } from '@app/file-download/file-download.service';
+import { FileDownloadService } from '@martinferra/frontend-common/file-download/file-download.service';
 
 @Injectable()
 export class ReportsService {
