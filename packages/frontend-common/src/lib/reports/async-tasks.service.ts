@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { TokenStorage } from '@martinferra/frontend-common/shared/services/auth/token.storage';
+import { TokenStorage } from '../shared/services/auth/token.storage';
 import { Observable, throwError } from 'rxjs';
 import { concatMap, filter, map, tap } from 'rxjs/operators';
 import { webSocket, WebSocketSubject } from 'rxjs/webSocket';

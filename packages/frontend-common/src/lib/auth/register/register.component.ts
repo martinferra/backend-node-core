@@ -6,10 +6,10 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 
-import { AuthService } from '@martinferra/frontend-common/shared/services';
-import { SharedConfigService } from '@martinferra/frontend-common/shared/services/shared-config/shared-config.service';
+import { AuthService } from '../../shared/services';
+import { SharedConfigService } from '../../shared/services/shared-config/shared-config.service';
 import { map, Observable } from 'rxjs';
-import { FormValidator } from '@martinferra/frontend-common/appValidators';
+import { FormValidator } from '../../appValidators';
 import { AuthComponentsUtilsService } from '../auth-components-utils.service';
 import { CommonModule } from '@angular/common';
 

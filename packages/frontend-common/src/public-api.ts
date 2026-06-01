@@ -32,6 +32,8 @@ export * from './lib/environments/environment';
 export * from './lib/models/data.service';
 export * from './lib/models/component-resolver.service';
 export * from './lib/models/class-resolver.service';
+export * from './lib/models/decorators/availableForMapping.decorator';
+export * from './lib/models/decorators/registeredForGui.decorator';
 
 // Date utils and reports
 export * from './lib/dateFunctions';
