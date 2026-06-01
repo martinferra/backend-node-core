@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { TokenStorage } from '@app/shared/services/auth/token.storage';
+import { TokenStorage } from '../shared/services/auth/token.storage';
 import { Observable, throwError } from 'rxjs';
 import { concatMap, filter, map, tap } from 'rxjs/operators';
 import { webSocket, WebSocketSubject } from 'rxjs/webSocket';
@@ -24,7 +24,7 @@ export class AsyncTasksService {
 
   private getMessageFromBlobOperator(type: TaskType): any {
     const postProcessByDefault: boolean = type !== TaskType.subscription;
-    return (blob: Blob): Promise<any> => commonFunctions(blob, postProcessByDefault)
+    return (blob: Blob): Promise<any> => commonFunctions.getMessageFromBlob(blob, postProcessByDefault)
   }
 
   private getKeepAliveOperator(socket$: any): any {

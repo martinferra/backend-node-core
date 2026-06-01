@@ -12,6 +12,8 @@ import {
 import {
   ControlValueAccessor,
   UntypedFormControl,
+  AbstractControl,
+  ValidationErrors,
   NG_VALUE_ACCESSOR,
   ReactiveFormsModule,
 } from '@angular/forms';
@@ -84,12 +86,14 @@ export class BasicAutocompletedInputComponent<T>
   @Input() hint: string = '';
   @Input() panelWidth!: number | string;
   @Input() allowEditing: boolean = false;
+  @Input() allowClear: boolean = true;
   @Input() contextData: any = {};
   @Input() tabIndex: number | boolean = 0;
   @Input() entityName!: string;
   @Input() disabled: boolean = false;
   @Input() defaultElementsList$!: Observable<T[]> | undefined; 
   @Input() showTooltip: boolean = true;
+  @Input() controlValidator: any;
 
   @Output() afterViewInitEmitter: EventEmitter<any> = new EventEmitter<any>();
 
@@ -243,7 +247,7 @@ export class BasicAutocompletedInputComponent<T>
   }
 
   private initializeFormControl() {
-    let validators;
+    let validators, asyncValidators;
 
     if (this.validators && this.validators instanceof Array) {
       validators = this.validators;
@@ -251,6 +255,14 @@ export class BasicAutocompletedInputComponent<T>
       validators = [this.validators];
     } else {
       validators = [];
+    }
+
+    if (this.asyncValidators && this.asyncValidators instanceof Array) {
+      asyncValidators = this.asyncValidators;
+    } else if (this.asyncValidators) {
+      asyncValidators = [this.asyncValidators];
+    } else {
+      asyncValidators = [];
     }
 
     validators.push(
@@ -261,10 +273,34 @@ export class BasicAutocompletedInputComponent<T>
       )
     );
 
+    if (this.controlValidator) {
+      asyncValidators.push(this.getOuterValidatorFn());
+    }
+
     this.elementCtrl = new UntypedFormControl(this.initialValue, {
-        validators: validators,
-      asyncValidators: this.asyncValidators,
+      validators: validators,
+      asyncValidators: asyncValidators,
     });
+  }
+
+  private getOuterValidatorFn(): any {
+    const thisComponent: BasicAutocompletedInputComponent<T> = this;
+    return (control: AbstractControl): Observable<ValidationErrors | null> => {
+      const err: ValidationErrors = { outerValidatorError: true };
+      switch (thisComponent.controlValidator?.control?.status) {
+      case 'VALID':
+        return of(null);
+      case 'INVALID':
+        return of(err);
+      case 'PENDING':
+        return thisComponent.controlValidator.control.statusChanges.pipe(
+          map((status: string) => status === 'VALID' ? null : err),
+          tap((validationErrors: ValidationErrors | null) => console.log('Outer validator emitted: ', validationErrors))
+        );
+      default:
+        return of(null);
+      }
+    };
   }
 
   private setObservable() {
@@ -293,7 +329,10 @@ export class BasicAutocompletedInputComponent<T>
   private processNewValue(value: any) {
     if (value && typeof value !== 'string') {
       let outputOuterElement = this.getOuterElement(value);
-      if (outputOuterElement.isNew()) {
+      const isNew = typeof outputOuterElement?.isNew === 'function'
+        ? outputOuterElement.isNew()
+        : !Boolean(outputOuterElement?._id);
+      if (isNew) {
         this.openDialog(outputOuterElement);
       } else {
         this.setSelectedElement(value);
@@ -346,6 +385,35 @@ export class BasicAutocompletedInputComponent<T>
     });
   }
 
+  displayElementInList(innerFilteredElement: any): string {
+    const str = this.displayElementInListFn(innerFilteredElement);
+    const isNew = !Boolean(this.getOuterElement(innerFilteredElement)?._id);
+    return isNew ? `"${str}" (crear nuevo)` : str;
+  }
+
+  public editSelectedElement() {
+    if (!this.allowEditing) {
+      return;
+    }
+    this.setSelectedElement();
+    const elementForEdition = this.getOuterElement(this.selectedElement);
+    if (!elementForEdition?.isNew?.()) {
+      this.openDialog(elementForEdition);
+    }
+  }
+
+  public resetForm() {
+    this.elementCtrl.reset();
+  }
+
+  public updateContext(contextData: any): void {
+    this.contextData = Object.assign(this.contextData, contextData);
+  }
+
+  public get _tabIndex() {
+    return isInteger(this.tabIndex) ? this.tabIndex : (this.tabIndex ? 0 : -1);
+  }
+
   public setValue(value: any): void {
     if (value) {
       this.setSelectedElement(this.getInnerElement(value), false);
@@ -363,7 +431,14 @@ export class BasicAutocompletedInputComponent<T>
   }
 
   public hasErrors(): boolean {
-    return !!this.elementCtrl.errors;
+    return this.elementCtrl.invalid;
+  }
+
+  get errorMessage(): string | null {
+    if (this.required && this.noElementSelected) {
+      return this.requiredErrorMessage || 'Este campo es requerido';
+    }
+    return this.controlValidator?.errorMessage;
   }
 
   public setFocus() {

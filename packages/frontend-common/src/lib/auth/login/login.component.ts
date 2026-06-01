@@ -8,8 +8,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatIconModule } from '@angular/material/icon';
 
-import { AuthService, UserInfo } from '@app/shared/services';
-import { ControlValidator, FormValidator } from '@app/appValidators';
+import { AuthService, UserInfo } from '../../shared/services';
+import { ControlValidator, FormValidator } from '../../appValidators';
 import { environment } from '../../environments/environment';
 import { AuthComponentsUtilsService } from '../auth-components-utils.service';
 
@@ -83,7 +83,7 @@ export class LoginComponent {
     this.authService
       .login(this.emailCtrl.value, this.passwordForm.get('password')?.value)
       .subscribe(() => {
-        this.router.navigateByUrl('/home');
+        //this.router.navigateByUrl('/home');
       });
   }
 

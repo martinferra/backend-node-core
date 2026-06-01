@@ -32,8 +32,25 @@ export * from './lib/environments/environment';
 export * from './lib/models/data.service';
 export * from './lib/models/component-resolver.service';
 export * from './lib/models/class-resolver.service';
+export * from './lib/models/interfaces/taskState.interface';
+export * from './lib/models/decorators/availableForMapping.decorator';
+export * from './lib/models/decorators/registeredAsChildClass.decorator';
+export * from './lib/models/decorators/registeredForGui.decorator';
+export * from './lib/models/decorators/withClassId.decorator';
+export * from './lib/models/decorators/withDiscriminator.decorator';
 
 // Date utils and reports
 export * from './lib/dateFunctions';
 export * from './lib/ms-to-time-str.pipe';
 export * from './lib/pagination/mat-paginator-intl-esp';
+export * from './lib/pagination/paginated-datasource';
+export * from './lib/pagination/pagination.types';
+export * from './lib/reports/reports.service';
+export * from './lib/reports/async-tasks.service';
+export * from './lib/services/backgroundTasks/background-tasks.service';
+export * from './lib/file-download/file-download.service';
+export * from './lib/filters/filter-handler/filter-handler.component';
+export * from './lib/expansion-list-editor/enums';
+export * from './lib/expansion-list-editor/expandable-component.interface';
+export * from './lib/expansion-list-editor/expandable-list-component.interface';
+export * from './lib/basic-autocompleted-input/basic-autocompleted-input-event.interface';

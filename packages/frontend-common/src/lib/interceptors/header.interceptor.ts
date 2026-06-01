@@ -1,7 +1,7 @@
 import { inject } from '@angular/core';
 import { HttpEvent, HttpRequest, HttpHandlerFn } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { AuthService } from '@app/shared/services';
+import { AuthService } from '../shared/services';
 
 export function getAuthHeaderFn() {
 

@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { AuthService } from '@app/shared/services';
+import { AuthService } from '../shared/services';
 
 @Injectable()
 export class OnlyAdminUsersGuard {

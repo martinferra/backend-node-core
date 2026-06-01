@@ -7,8 +7,10 @@ import { map } from 'rxjs/operators';
 import { AuthService } from '../services';
 
 @Injectable({ providedIn: 'root' })
-export class AuthGuard {
-  constructor(private router: Router, private authService: AuthService) {}
+export class AuthGuard  {
+  constructor(
+    private router: Router, 
+    private authService: AuthService) {}
 
   canActivate(): Observable<boolean> {
     return this.authService.getUser().pipe(

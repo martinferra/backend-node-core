@@ -6,10 +6,10 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 
-import { AuthService } from '@app/shared/services';
-import { SharedConfigService } from '@app/shared/services/shared-config/shared-config.service';
+import { AuthService } from '../../shared/services';
+import { SharedConfigService } from '../../shared/services/shared-config/shared-config.service';
 import { map, Observable } from 'rxjs';
-import { FormValidator } from '@app/appValidators';
+import { FormValidator } from '../../appValidators';
 import { AuthComponentsUtilsService } from '../auth-components-utils.service';
 import { CommonModule } from '@angular/common';
 
@@ -76,7 +76,7 @@ export class RegisterComponent {
         this.authService
           .register(fullname, email, password, repeatPassword)
           .subscribe(() => {
-            this.router.navigate(['/home']);
+            //this.router.navigate(['/home']);
           });
       } else {
         this.authService.addRegistrationReq(fullname, email).subscribe();

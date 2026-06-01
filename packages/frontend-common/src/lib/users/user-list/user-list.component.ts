@@ -13,8 +13,8 @@ import { CommonModule } from '@angular/common';
 import { User } from '../../models/user/user.model';
 import { UserService } from '../../models/user/user.service';
 import { UserNewEditDialogWrapperComponent } from '../user-new-edit/user-new-edit.component';
-import { ConfirmationDialogComponent } from '@martinferra/frontend-common';
-import { FloatingComponent } from '@app/floating-component';
+import { ConfirmationDialogComponent } from '../../confirmation-dialog/confirmation-dialog.component';
+import { FloatingComponent } from '../../floating-component';
 
 @Component({
   selector: 'app-user-list',

@@ -1,12 +1,8 @@
-// Input width
 $matFormFieldWidth: 15.5em;
-// Selected element backgroud color
 $selElemBkgClr: #ac92db;
-// Not editable selected element backgroud color
 $notEditSelElemBkgClr: #7f6ca1;
-// Light text color
 $lgtTxtClr: whitesmoke;
-// Estilos para permitir que el texto sea oculte más allá del ancho máximo 
+
 @mixin clippedText() {
     white-space: nowrap;
     overflow: hidden;
