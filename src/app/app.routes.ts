@@ -1,5 +1,4 @@
 import { Routes } from '@angular/router';
-import { AppComponent } from '@martinferra/frontend-custom';
 
 export const appRoutes: Routes = [
   {
