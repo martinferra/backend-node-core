@@ -8,6 +8,7 @@
   "license": "UNLICENSED",
   "dependencies": {
     "googleapis": "^153.0.0",
+    "jszip": "^3.10.1",
     "nodemailer": "^7.0.5"
   },
   "scripts": {

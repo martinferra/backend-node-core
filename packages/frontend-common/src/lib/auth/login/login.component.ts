@@ -83,7 +83,7 @@ export class LoginComponent {
     this.authService
       .login(this.emailCtrl.value, this.passwordForm.get('password')?.value)
       .subscribe(() => {
-        //this.router.navigateByUrl('/home');
+        this.router.navigateByUrl('/');
       });
   }
 

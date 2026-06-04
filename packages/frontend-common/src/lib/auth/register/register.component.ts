@@ -76,7 +76,7 @@ export class RegisterComponent {
         this.authService
           .register(fullname, email, password, repeatPassword)
           .subscribe(() => {
-            //this.router.navigate(['/home']);
+            this.router.navigate(['/']);
           });
       } else {
         this.authService.addRegistrationReq(fullname, email).subscribe();

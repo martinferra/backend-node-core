@@ -38,7 +38,7 @@ export class ComponentResolver {
   }
 }
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class ComponentResolverService {
 
   private componentResolver: ComponentResolver = ComponentResolver.getInstance();

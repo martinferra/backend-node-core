@@ -3,6 +3,7 @@ import { provideRouter } from "@angular/router";
 import { appRoutes } from "./app.routes";
 import { provideHttpClient, withInterceptors } from "@angular/common/http";
 import { provideAnimations } from "@angular/platform-browser/animations";
+import { provideMomentDateAdapter } from "@angular/material-moment-adapter";
 import { getAuthHeaderFn } from "@martinferra/frontend-common/interceptors/header.interceptor";
 import { getCatchErrorFn } from "@martinferra/frontend-common/interceptors/http-error.interceptor";
 import { AuthService } from "@martinferra/frontend-common/shared/services/auth/auth.service";
@@ -24,6 +25,7 @@ export const appConfig: ApplicationConfig = {
     provideRouter(appRoutes),
     provideHttpClient(withInterceptors(httpInterceptors)),
     provideAnimations(),
+    provideMomentDateAdapter(),
     ComponentResolverService,
     {
       provide: APP_INITIALIZER,

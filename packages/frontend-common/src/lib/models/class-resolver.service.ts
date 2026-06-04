@@ -25,7 +25,7 @@ export class ClassResolver {
 
 }
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class ClassResolverService {
 
   private classResolver: ClassResolver = ClassResolver.getInstance()

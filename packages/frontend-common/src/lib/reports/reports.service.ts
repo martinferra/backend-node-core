@@ -7,7 +7,7 @@ import { TaskState } from '../models/interfaces/taskState.interface';
 import { TaskType, AsyncTasksService } from './async-tasks.service';
 import { FileDownloadService } from '../file-download/file-download.service';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class ReportsService {
 
   constructor(
