@@ -3,7 +3,6 @@ require('./models/registration-req.model');
 module.exports = {
     config: {
         email: require('./config/email'),
-        mongoosePlugins: require('./config/mongoose.plugins'),
         serverProcesses: require('./config/server-processes'),
         subscriptions: require('./config/subscriptions'),
         websocketCallbacks: require('./config/websocket-callbacks'),
