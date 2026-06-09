@@ -16,6 +16,7 @@
     "**/*.spec.ts"
   ],
   "angularCompilerOptions": {
-    "compilationMode": "partial"
+    "compilationMode": "partial",
+    "strictTemplates": true
   }
 }
