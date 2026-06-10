@@ -154,6 +154,28 @@ bootstrapApplication(AppComponent, appConfig);
 
 `app.config.ts` provides: router, HttpClient with interceptors, animations, and an `APP_INITIALIZER` that validates the user session on first load.
 
+`src/index.html` in mean-core should stay framework-generic and must not define project-specific browser title text. The consuming app (`frontend-custom`) owns the browser title and should set it from its root component (for example, via Angular `Title` service).
+
+Example (in `frontend-custom/src/lib/app/app.component.ts`):
+
+```ts
+import { Component } from '@angular/core';
+import { Title } from '@angular/platform-browser';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  standalone: true,
+})
+export class AppComponent {
+  readonly pageTitle = 'MyProject';
+
+  constructor(private titleService: Title) {
+    this.titleService.setTitle(this.pageTitle);
+  }
+}
+```
+
 ---
 
 ## Consuming Project Structure
@@ -307,6 +329,7 @@ Custom projects may add their own variables and validate them via Joi in `backen
 - Route modules use lazy loading via `loadChildren` with inline arrow functions.
 - Interceptors are registered functionally in `app.config.ts` via `withInterceptors`.
 - Use Angular Material components for all UI elements.
+- Browser tab title is owned by the consuming frontend (`frontend-custom`), not by mean-core static HTML.
 
 ### Security
 
