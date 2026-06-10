@@ -7,7 +7,16 @@ const globalPlugin = require('../config/mongoose.plugins');
 
 // connect to mongo db
 const mongoUri = config.mongo.host;
-mongoose.connect(mongoUri, {});
+const mongoOptions =
+  config.env === 'development'
+    ? {
+        serverSelectionTimeoutMS: 5000,
+        connectTimeoutMS: 5000,
+        socketTimeoutMS: 5000,
+      }
+    : {};
+
+mongoose.connect(mongoUri, mongoOptions);
 mongoose.connection.on('error', error => {
   throw new Error(
     `unable to connect to database: ${mongoUri}. Error: ${error}`
