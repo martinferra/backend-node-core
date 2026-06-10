@@ -4,7 +4,10 @@ const serverPort = process.env.SERVER_PORT || 4040;
 const browserSyncPort = process.env.BS_PORT || 3000;
 
 module.exports = {
-    proxy: "http://localhost:" + serverPort,
+    proxy: {
+        target: "http://localhost:" + serverPort,
+        ws: true
+    },
     files: ["dist/mean-core/**/*.*"],
     reloadDelay: 1000,
     port: browserSyncPort,
