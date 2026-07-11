@@ -12,7 +12,7 @@
       "program": "${workspaceFolder}\\server\\index.js",
       "preLaunchTask": "npm: build:dev",
       "outFiles": [
-        "${workspaceFolder}/dist/mean-core/*.js",
+        "${workspaceFolder}/dist/*.js",
         "${workspaceFolder}/server/**/*.js"
       ],
       "runtimeExecutable": "nodemon",
@@ -25,7 +25,7 @@
       "skipFiles": ["<node_internals>/**"],
       "program": "${workspaceFolder}\\server\\index.js",
       "outFiles": [
-        "${workspaceFolder}/dist/mean-core/*.js",
+        "${workspaceFolder}/dist/*.js",
         "${workspaceFolder}/server/**/*.js"
       ],
       "runtimeExecutable": "nodemon",

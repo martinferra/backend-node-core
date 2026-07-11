@@ -8,7 +8,7 @@ module.exports = {
         target: "http://localhost:" + serverPort,
         ws: true
     },
-    files: ["dist/mean-core/**/*.*"],
+    files: ["dist/**/*.*"],
     reloadDelay: 1000,
     port: browserSyncPort,
     browser: require('path').join(__dirname, "launch-chrome-with-debugging.cmd")

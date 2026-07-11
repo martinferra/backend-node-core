@@ -42,13 +42,9 @@ function loggerFn(tokens, req, res) {
 }
 
 // Choose what frontend framework to serve the dist from
-var distDir = '../../../dist/mean-core/';
-if (config.frontend == 'react') {
-  distDir = '../../../node_modules/material-dashboard-react/dist';
-} else {
-  distDir = '../../../dist/mean-core/';
-}
-
+var distDir = config.frontend == 'react'
+  ? '../../../node_modules/material-dashboard-react/dist'
+  : '../../../dist/'
 
 // enable CORS - Cross Origin Resource Sharing
 app.use(cors());
@@ -60,19 +56,10 @@ app.use('/public', express.static(path.join(__dirname, '../public')));
 
 
 app.use(/^((?!(api)).)*/, (req, res) => {
-  res.sendFile(path.join(__dirname, distDir + '/index.html'));
+  res.sendFile(path.join(__dirname, distDir, 'index.html'));
 });
 
 console.log(distDir);
-//React server
-app.use(
-  express.static(
-    path.join(__dirname, '../../node_modules/material-dashboard-react/dist')
-  )
-);
-app.use(/^((?!(api)).)*/, (req, res) => {
-  res.sendFile(path.join(__dirname, '../../../dist/mean-core/index.html'));
-});
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));

@@ -276,7 +276,7 @@ module.exports = {
 
 - `newProjectRoot`: `"mean-core/packages"`
 - Main app project `root`: `"mean-core"`, `sourceRoot`: `"mean-core/src"`
-- `outputPath`: `"dist/mean-core"`
+- `outputPath`: `"dist"`
 - Builder: `@angular-builders/custom-webpack:browser`
 - The library project `frontend-common` entry at `mean-core/packages/frontend-common`
 - The library project `frontend-custom` entry at `frontend-custom/`

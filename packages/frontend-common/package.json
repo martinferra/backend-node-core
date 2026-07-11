@@ -3,11 +3,11 @@
   "version": "0.0.1",
   "scripts": {
     "ng": "ng",
-    "build": "ng build mean-core --configuration production-debug",
-    "build:dev": "ng build mean-core --watch=true --configuration development",
-    "build:prod-debug": "ng build mean-core --configuration production-debug",
-    "build:prod": "ng build mean-core --configuration production",
-    "e2e": "ng e2e mean-core"
+    "build": "ng build app --configuration production-debug",
+    "build:dev": "ng build app --watch=true --configuration development",
+    "build:prod-debug": "ng build app --configuration production-debug",
+    "build:prod": "ng build app --configuration production",
+    "e2e": "ng e2e app"
   },
   "peerDependencies": {
     "@angular/common": "18.2.8",
