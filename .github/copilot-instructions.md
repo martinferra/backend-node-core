@@ -265,7 +265,7 @@ module.exports = {
     "mean-core/packages/backend-common",
     "mean-core/packages/common",
     "mean-core/packages/config",
-    "mean-core/packages/frontend-common",
+    "frontend-common",
     "backend-custom",
     "frontend-custom"
   ]
@@ -274,11 +274,11 @@ module.exports = {
 
 ### angular.json (key entries)
 
-- `newProjectRoot`: `"mean-core/packages"`
+- `newProjectRoot`: `"."`
 - Main app project `root`: `"mean-core"`, `sourceRoot`: `"mean-core/src"`
 - `outputPath`: `"dist"`
 - Builder: `@angular-builders/custom-webpack:browser`
-- The library project `frontend-common` entry at `mean-core/packages/frontend-common`
+- The library project `frontend-common` entry at `frontend-common`
 - The library project `frontend-custom` entry at `frontend-custom/`
 
 ---
