@@ -2,7 +2,7 @@
 
 ## Overview
 
-mean-core is a full-stack MEAN (MongoDB, Express, Angular, Node.js) framework used as a **git submodule** in application repositories. It provides the core infrastructure (authentication, user management, shared components, factory patterns, configuration) so that consuming projects only need to implement their domain-specific logic on top of it.
+mean-core is a backend-first core framework used as a **git submodule** in application repositories. It provides shared backend infrastructure (authentication, user management, model/router factories, configuration) and serves whichever frontend distribution is selected by configuration (`MEAN_FRONTEND`, currently `angular` or `react`).
 
 ---
 
@@ -15,9 +15,8 @@ mean-core is a full-stack MEAN (MongoDB, Express, Angular, Node.js) framework us
 | Database | MongoDB via Mongoose 8 |
 | Auth | JWT (`express-jwt`, `jsonwebtoken`, Passport) |
 | Validation | Joi (env vars + request schemas) |
-| Frontend framework | Angular 18 (standalone components) |
-| UI library | Angular Material 18 |
-| Frontend build | Angular CLI with custom-webpack builder |
+| Frontend integration | Static frontend serving selected by `MEAN_FRONTEND` |
+| Angular support | Available via `packages/frontend-common` and/or consuming repo frontend workspace |
 | Dev server | BrowserSync |
 | Package management | npm workspaces |
 
@@ -43,8 +42,8 @@ mean-core/                          ← submodule root (this repo)
 │   │   └── index.js
 │   ├── config/                     ← centralised config (@martinferra/config)
 │   │   └── config.js               ← loads .env with Joi, exports typed config object
-│   └── frontend-common/            ← Angular library (@martinferra/frontend-common)
-│       └── src/lib/                ← components, services, models, interceptors, pipes
+│   └── frontend-common/            ← frontend-common package sources synced from frontend-common repo
+│       └── src/                    ← Angular app/library code (reference frontend package)
 ├── server/
 │   ├── index.js                    ← entry point (listens on port, inits server processes)
 │   ├── required.js                 ← bootstraps mongoose + loads @martinferra/backend-custom
@@ -55,18 +54,10 @@ mean-core/                          ← submodule root (this repo)
 │   │   └── swagger.json            ← Swagger spec
 │   └── routes/
 │       └── index.route.js          ← mounts all routes (core + custom)
-├── src/                            ← Angular application
-│   ├── main.ts                     ← bootstrapApplication — imports AppComponent from frontend-custom
-│   ├── index.html
-│   ├── styles.scss
-│   └── app/
-│       ├── app.config.ts           ← ApplicationConfig (router, HttpClient, interceptors, APP_INITIALIZER)
-│       └── app.routes.ts           ← top-level lazy routes (auth, admin, …)
 ├── assets/
 ├── .env.example                    ← template for required environment variables
-├── package.json                    ← npm workspace member; scripts: start, build:dev, build:prod
-├── tsconfig.json
-└── angular.json                    ← only present in the consuming project root
+├── nodemon.json                    ← backend watch configuration
+└── package.json                    ← npm workspace member; scripts: serve/start/start:debug/start:bs
 ```
 
 ---
@@ -141,40 +132,18 @@ Never read `process.env` directly in application code — always import from `@m
 
 ### 5. Frontend — DataService Abstract Class
 
-All Angular entity services extend `DataService` from `@martinferra/frontend-common`. This class wires HTTP calls, `class-transformer` serialization, and instance methods (`save()`, `remove()`) onto entity class instances automatically.
+When using the Angular frontend, entity services extend `DataService` from `@martinferra/frontend-common`. This class wires HTTP calls, `class-transformer` serialization, and instance methods (`save()`, `remove()`) onto entity class instances automatically.
 
-### 6. Frontend Bootstrap
+### 6. Frontend Serving Strategy
 
-`main.ts` bootstraps the Angular app using the standalone API:
+Frontend runtime is selected in `@martinferra/config` through `MEAN_FRONTEND` and used by `server/config/express.js`.
 
-```ts
-import { AppComponent } from '@martinferra/frontend-custom'; // from the consuming project
-bootstrapApplication(AppComponent, appConfig);
-```
+- `MEAN_FRONTEND=angular`: serve `../../../dist/`
+- `MEAN_FRONTEND=react`: serve `../../../node_modules/material-dashboard-react/dist`
 
-`app.config.ts` provides: router, HttpClient with interceptors, animations, and an `APP_INITIALIZER` that validates the user session on first load.
+Express mounts static files from the selected dist and returns `index.html` for non-API routes.
 
-`src/index.html` in mean-core should stay framework-generic and must not define project-specific browser title text. The consuming app (`frontend-custom`) owns the browser title and should set it from its root component (for example, via Angular `Title` service).
-
-Example (in `frontend-custom/src/lib/app/app.component.ts`):
-
-```ts
-import { Component } from '@angular/core';
-import { Title } from '@angular/platform-browser';
-
-@Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  standalone: true,
-})
-export class AppComponent {
-  readonly pageTitle = 'MyProject';
-
-  constructor(private titleService: Title) {
-    this.titleService.setTitle(this.pageTitle);
-  }
-}
-```
+The backend remains framework-agnostic as long as frontend output is built to the expected dist path.
 
 ---
 
@@ -201,21 +170,17 @@ A project that uses mean-core as a git submodule must follow this structure:
 │   │   └── <entity>.schema.js      ← Joi validation schema for request payloads
 │   └── reports/
 │       └── reports-definitions.js  ← custom report definitions
-├── frontend-custom/                ← domain-specific Angular library
+├── frontend-common/                ← frontend app workspace (Angular in current implementations)
+│   ├── angular.json
+│   ├── package.json
+│   └── src/
+├── frontend-custom/                ← optional domain-specific frontend library/extensions
 │   ├── package.json                ← name: "@martinferra/frontend-custom"
 │   ├── ng-package.json
 │   ├── tsconfig.lib.json
 │   └── src/
-│       ├── public-api.ts           ← re-exports AppComponent and other public symbols
-│       └── lib/
-│           ├── app/
-│           │   └── app.component.ts  ← root Angular component
-│           └── <feature>/           ← one folder per domain entity/feature
-│               ├── <feature>-list/
-│               ├── <feature>-form/
-│               └── <feature>.routes.ts
 ├── package.json                    ← root package.json declaring npm workspaces
-├── angular.json                    ← Angular workspace config (references mean-core/src, etc.)
+├── frontend-common/angular.json    ← Angular workspace config (when Angular frontend is used)
 ├── tsconfig.json                   ← root TypeScript config
 └── .env                            ← environment variables (never committed)
 ```
@@ -274,12 +239,12 @@ module.exports = {
 
 ### angular.json (key entries)
 
-- `newProjectRoot`: `"."`
-- Main app project `root`: `"mean-core"`, `sourceRoot`: `"mean-core/src"`
-- `outputPath`: `"dist"`
+- Located at `frontend-common/angular.json` in consuming repos that use Angular.
+- Main app project `root`: `"."`, `sourceRoot`: `"src"`
+- `outputPath`: `"../dist"`
 - Builder: `@angular-builders/custom-webpack:browser`
-- The library project `frontend-common` entry at `frontend-common`
-- The library project `frontend-custom` entry at `frontend-custom/`
+- Styles can be sourced from `../frontend-custom/src/styles.scss`.
+- The library project `@martinferra/frontend-custom` is typically mapped from `../frontend-custom`.
 
 ---
 
@@ -342,11 +307,12 @@ Custom projects may add their own variables and validate them via Joi in `backen
 
 ## Scripts
 
-Run from the **project root**:
+Run from the **mean-core workspace root**:
 
 | Script | Description |
 |---|---|
-| `npm start` | Start the Express server (production mode) |
-| `npm run build:dev` | Build Angular app in watch/development mode |
-| `npm run build:prod` | Build Angular app for production |
+| `npm start` | Start the Express server |
+| `npm run start:debug` | Start the server with nodemon + inspector |
 | `npm run start:bs` | Start BrowserSync (proxies the Express server with live reload) |
+
+Frontend build scripts (`build:dev`, `build:prod`, etc.) are owned by the consuming frontend workspace (for example, `frontend-common`).
