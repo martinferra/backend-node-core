@@ -1,3 +1,9 @@
 {
-    "watch": ["server"]
+    "watch": [
+        "server",
+        "packages/backend-common",
+        "packages/common/*.js",
+        "packages/config",
+        "../backend-custom"
+    ]
 }
