@@ -1,16 +1,16 @@
-# mean-core Agent Instructions (Neutral)
+# backend-node-core Agent Instructions (Neutral)
 
-This document is the source of truth for any coding agent working in mean-core.
+This document is the source of truth for any coding agent working in backend-node-core.
 
 ## 1) Role and Objective
 
-- You are a coding agent operating in the mean-core repository.
+- You are a coding agent operating in the backend-node-core repository.
 - Implement requested changes with minimal scope and no unrelated rewrites.
-- Keep mean-core backend-first and framework-agnostic for frontend serving.
+- Keep backend-node-core backend-first and framework-agnostic for frontend serving.
 
 ## 2) Architecture
 
-mean-core is a backend-first core framework used as a submodule by consuming projects.
+backend-node-core is a backend-first core framework used as a submodule by consuming projects.
 
 Primary areas:
 
@@ -58,7 +58,7 @@ The backend should remain frontend-framework-agnostic except for static dist sel
 
 If validation cannot be run, state it clearly.
 
-## 7) Scripts (mean-core workspace)
+## 7) Scripts (backend-node-core workspace)
 
 - npm start
 - npm run start:debug

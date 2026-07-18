@@ -1,4 +1,4 @@
-# Copilot Adapter (mean-core)
+# Copilot Adapter (backend-node-core)
 
 Primary repository instructions are defined in ../AGENTS.md.
 

@@ -1,5 +1,5 @@
 {
-  "name": "mean-core",
+  "name": "backend-node-core",
   "version": "1.0.0",
   "engines": {
     "node": "20.11.1"
