@@ -18,7 +18,6 @@ Primary areas:
 - packages/backend-common/: shared backend model/router/controller infrastructure.
 - packages/common/: shared utilities.
 - packages/config/: validated environment configuration.
-- packages/frontend-common/: Angular-oriented frontend package sources (when Angular is used).
 
 Frontend runtime selection:
 
@@ -27,13 +26,19 @@ Frontend runtime selection:
 
 The backend should remain frontend-framework-agnostic except for static dist selection.
 
-## 3) Required Backend Conventions
+## 3) Backend Conventions and Package-Specific Rules
 
-- Register models using modelFactory.registerModelSchema(...).
-- Resolve models with modelFactory.getModel(name, req.params.discriminator).
-- Prefer getRouterByModel(...) for standard CRUD APIs.
-- Keep Joi request schemas separate from Mongoose schemas.
-- Use shared config modules; do not read process.env directly in business logic.
+For detailed backend conventions, model registration, route generation, and package-specific rules:
+
+**→ See [packages/backend-common/AGENTS.md](packages/backend-common/AGENTS.md)**
+
+That document covers:
+
+- How to register models and resolve them with discriminators.
+- Generic CRUD router generation patterns.
+- Joi/Mongoose schema separation.
+- Custom route extension patterns.
+- How consuming packages (backend-custom) should use backend-common.
 
 ## 4) Environment and Security
 
