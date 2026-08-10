@@ -1,4 +1,5 @@
 require('./models/registration-req.model');
+require('./models/log-message.model');
 
 module.exports = {
     config: {
@@ -21,6 +22,7 @@ module.exports = {
     },
     models: {
         modelFactory: require('./models/model.factory'),
+        logMessage: require('./models/log-message.model'),
         registrationReq: require('./models/registration-req.model'),
         user: require('./models/user.model')
     },
