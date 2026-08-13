@@ -36,17 +36,30 @@ function registerModelDiscriminator(name, schema, discriminator) {
     )
 }
 
-function addMiddlewareEntry(schema, method, pathTail) {
-    schema.post(method, function (doc) {
-        let path = doc.constructor.collection.name.replace('_','/')+'/'+pathTail;
-        let plainObj = doc.toObject();
+function addMiddlewareEntry(schema, innerMethod, outerMethod) {
+    schema.post(innerMethod, function (doc) {
+        var modelId;
+        if (doc.constructor.useDiscriminators) {
+            /* The last underscore in the collection name is the one that 
+            separates the model name from the discriminator name, so we 
+            replace it with a slash to get the modelId. */
+            modelId = doc.constructor.collection.name.replace(/_(?=[^_]*$)/, '/');
+        } else {
+            modelId = doc.constructor.modelName.toLowerCase();
+        }
+        const resolvedOuterMethod = typeof outerMethod === 'function' ? outerMethod(doc) : outerMethod;
+        const path = `${modelId}/${resolvedOuterMethod}/${doc._id.toString()}`;
+        const plainObj = doc.toObject();
         plainObj._id = plainObj._id.toString();
         subscriptions.publish(path, plainObj);
     });
 };
 
 function addMiddleware(schema) {
-    addMiddlewareEntry(schema, 'save', 'new');
+    schema.pre('save', function () {
+        this._wasNew = this.isNew;
+    });
+    addMiddlewareEntry(schema, 'save', (doc) => doc._wasNew ? 'new' : 'update');
     addMiddlewareEntry(schema, 'findOneAndUpdate', 'update');
     addMiddlewareEntry(schema, 'findOneAndRemove', 'remove');
 };
