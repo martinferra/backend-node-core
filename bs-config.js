@@ -11,5 +11,6 @@ module.exports = {
     files: ["../dist/**/*.*"],
     reloadDelay: 1000,
     port: browserSyncPort,
+    notify: false,
     browser: require('path').join(__dirname, "launch-chrome-with-debugging.cmd")
 };
