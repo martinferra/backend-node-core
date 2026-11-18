@@ -2,6 +2,7 @@ const config = require('@martinferra/config');
 const nodemailer = require("nodemailer");
 const Joi = require('joi');
 const { google } = require('googleapis');
+const { logMessage } = require('../models/log-message.model');
 
 const smtpAuthSchema = Joi.object({
   user: Joi.string().email().required(),
@@ -84,6 +85,7 @@ async function sendMail(mailParams) {
     transporterPromise.then(transporter => transporter.sendMail(mailParams));
   } catch (error) {
     console.error('Error sending mail:', error);
+    await logMessage('error', `Error sending mail: ${error.message}`);
   }
 }
 

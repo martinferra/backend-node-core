@@ -1,6 +1,7 @@
 const async = require('async')
 const clone = require('lodash').clone
 const mongoose = require('mongoose')
+const { logMessage } = require('@martinferra/backend-common').models.logMessage;
 
 function saveChildrenInvoker(schema, obj) {
     return cb => schema.saveChildren(obj, cb)
@@ -96,6 +97,7 @@ function globalPlugin(schema, options) {
                 else
                     return resObj
             } catch(e) {
+                await logMessage('error', `Error saving children for ${this.constructor.modelName}: ${e.message}`);
                 if(cb)
                     cb(e, resObj)
                 else
@@ -146,6 +148,7 @@ function globalPlugin(schema, options) {
                 return savedDoc
         }
         catch(e) {
+            await logMessage('error', `Error saving document for ${this.modelName}: ${e.message}`);
             if(cb) 
                 cb(e, savedDoc)
             else
@@ -211,6 +214,8 @@ function globalPlugin(schema, options) {
             2) Cuando la búsqueda se realiza por "_id" (se trata de un update) y los datos que se 
                intentan guardar colisionan con un documento existente para el/los campo/s del índice */
             catch(e) {
+                const logType = e.constructor.name == 'MongoError' && e.code == 11000 ? 'warning' : 'error';
+                await logMessage(logType, `Error updating document with unique keys for ${this.modelName}: ${e.message}`);
                 if(e.constructor.name == 'MongoError' && e.code == 11000) {
                     // Caso 2)
                     if(hasUniqueKeys && query._id) {

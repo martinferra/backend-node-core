@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const commonFunctions = require('../commonFunctions');
 const applyMongooseTypesRecursive = commonFunctions.applyMongooseTypesRecursive;
+const { logMessage } = require('../models/log-message.model');
 
 async function basicAggregationFind(model, aggregationParams, createAggregationCb=null, postPipelineArr=null, cb=null) {
 
@@ -85,7 +86,14 @@ async function basicQueryFind(queryParams, createCb, postCb, cb) {
     if(cb) {
         query.exec()
             .then(data=>cb(null, data))
-            .catch(err=>cb(err));
+            .catch(async err => {
+                try {
+                    await logMessage('error', `Error executing basic query: ${err.message}`);
+                } catch (logErr) {
+                    console.error('Error logging basic query failure:', logErr);
+                }
+                cb(err);
+            });
         return;
     } else {
         return await query.exec();

@@ -6,6 +6,7 @@ const serverProcs = require('./server-processes');
 const jwt = require('jsonwebtoken');
 const { BSON } = require('bson');
 const { preBSONSerialization } = require('@martinferra/common').commonFunctions;
+const { logMessage } = require('../models/log-message.model');
 
 var subscriptionsByWs = new Map();
 
@@ -27,6 +28,7 @@ async function rpcController(user, rpc, ws) {
       payload: callbackRet
     };
   } catch(e) {
+    await logMessage('error', `WebSocket RPC "${rpc.name}" failed: ${e.message}`);
     objectToSend = {
       type: 'error', 
       payload: e.message
@@ -95,6 +97,8 @@ function init(server) {
         user ??= jwt.verify(incomingMessage.token, config.jwtSecret);
       } catch(e) {
         console.log('Error: websockets module -> on message -> jwt verification error');
+        logMessage('error', `WebSocket JWT verification failed: ${e.message}`)
+          .catch(logErr => console.error('Error logging WebSocket JWT failure:', logErr));
       } finally {
         if(!user) {
           ws.close(1, 'Access denied');

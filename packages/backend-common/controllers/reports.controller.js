@@ -7,6 +7,7 @@ const async = require('async');
 const tmp = require('tmp-promise');
 const path = require('path');
 const fs = require('fs');
+const { logMessage } = require('../models/log-message.model');
 
 var reportSpecs = new Map();
 
@@ -140,6 +141,7 @@ async function getExcelReport(cb, spec, user, ...params) {
         await workbookWriter.commit();
 
     } catch(e) {
+        await logMessage('error', `Error generating Excel report: ${e.message}`);
         error = e;
     } finally {
         if(cb) {
@@ -171,6 +173,7 @@ async function getTxtReport(cb, spec, user, ...params) {
             buffer += '\n';
         });
     } catch(e) {
+        await logMessage('error', `Error generating TXT report: ${e.message}`);
         error = e;
     } finally {
         if(cb) {
@@ -192,6 +195,7 @@ async function getPdfReport(cb, spec, user, ...params) {
     try {
         buffer = await getData(user, ...params);
     } catch(e) {
+        await logMessage('error', `Error generating PDF report: ${e.message}`);
         error = e;
     } finally {
         if(cb) {
@@ -252,6 +256,8 @@ async function getReportsGroup(cb, spec, user, ...params) {
                         content = await fs.promises.readFile(content);
                     }
                 } catch (readError) {
+                    const logType = ['ENOENT', 'ENOTDIR'].includes(readError?.code) ? 'warning' : 'error';
+                    await logMessage(logType, `Error resolving report content as a file: ${readError.message}`);
                     // Keep original string when it's not a valid file path.
                     if (!['ENOENT', 'ENOTDIR'].includes(readError?.code)) {
                         throw readError;
@@ -269,6 +275,7 @@ async function getReportsGroup(cb, spec, user, ...params) {
         buffer = await zip.generateAsync({type:"arraybuffer"});
 
     } catch(e) {
+        await logMessage('error', `Error generating report group: ${e.message}`);
         error = e;
     } finally {
         if(cb) {
