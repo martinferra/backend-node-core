@@ -7,6 +7,8 @@ const async = require('async');
 const tmp = require('tmp-promise');
 const path = require('path');
 const fs = require('fs');
+const ejs = require('ejs');
+const puppeteer = require('puppeteer');
 const { logMessage } = require('../models/log-message.model');
 
 var reportSpecs = new Map();
@@ -193,7 +195,41 @@ async function getPdfReport(cb, spec, user, ...params) {
     let error = null;
 
     try {
-        buffer = await getData(user, ...params);
+        const data = await getData(user, ...params);
+        if (spec.templatePath) {
+            const html = await ejs.renderFile(spec.templatePath, data);
+            const browser = await puppeteer.launch();
+            try {
+                const page = await browser.newPage();
+                await page.setRequestInterception(true);
+                page.on('request', request => {
+                    if (request.url().startsWith('data:') || request.url() === 'about:blank') {
+                        request.continue();
+                    } else {
+                        request.abort();
+                    }
+                });
+                await page.setContent(html, { waitUntil: 'load' });
+                const brokenImages = await page.$$eval('img', images =>
+                    images.some(image => !image.complete || image.naturalWidth === 0));
+                if (brokenImages) {
+                    throw new Error('No se pudo cargar una imagen del reporte');
+                }
+                if (spec.pageSelector) {
+                    const overflow = await page.$$eval(spec.pageSelector, pages =>
+                        pages.some(element => element.scrollHeight > element.clientHeight ||
+                            element.scrollWidth > element.clientWidth));
+                    if (overflow) {
+                        throw new Error('El contenido del reporte excede el tamaño de una página');
+                    }
+                }
+                buffer = Buffer.from(await page.pdf({ format: 'A4', printBackground: true, preferCSSPageSize: true }));
+            } finally {
+                await browser.close();
+            }
+        } else {
+            buffer = data;
+        }
     } catch(e) {
         await logMessage('error', `Error generating PDF report: ${e.message}`);
         error = e;
@@ -231,9 +267,9 @@ async function getSingleReport(cb, spec, user, ...params) {
 async function getReportsGroup(cb, spec, user, ...params) {
     let buffer;
     let error = null;
-    timestampStr = getTimestampString();
+    const timestampStr = getTimestampString();
     try {
-        bufferArray = await async.parallel(
+        const bufferArray = await async.parallel(
             spec.specArray.map( _spec => cb => { 
                 getSingleReport(cb, _spec, user, ...params) 
             })
@@ -247,6 +283,14 @@ async function getReportsGroup(cb, spec, user, ...params) {
             const _spec = spec.specArray[idx];
             let content = bufferArray[idx];
 
+            if (_spec.reportType === 'excel') {
+                const filePath = content;
+                try {
+                    content = await fs.promises.readFile(filePath);
+                } finally {
+                    await fs.promises.unlink(filePath);
+                }
+            }
             // If content contains a filesystem path (string), read file into Buffer.
             // JSZip expects actual content (Buffer / ArrayBuffer / Uint8Array / string / Blob).
             if (typeof content === 'string') {
