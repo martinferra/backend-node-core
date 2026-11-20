@@ -23,7 +23,7 @@ async function getReport(reportReq) {
         spec = await spec.getSpec(...reportReq.reportParams);
     }
     if(spec.specArray) {
-        return getReportsGroup(null, spec, reportReq.user, ...reportReq.reportParams);
+        return getReportsGroup(null, spec, reportReq.user, reportReq.responseFormat === 'named', ...reportReq.reportParams);
     }
     return getSingleReport(null, spec, reportReq.user, ...reportReq.reportParams);
 }
@@ -264,10 +264,11 @@ async function getSingleReport(cb, spec, user, ...params) {
     return getReport(cb, spec, user, ...params);
 }
 
-async function getReportsGroup(cb, spec, user, ...params) {
+async function getReportsGroup(cb, spec, user, includeFileName, ...params) {
     let buffer;
     let error = null;
     const timestampStr = getTimestampString();
+    const folderName = `${spec.fileBaseName}_${timestampStr}`;
     try {
         const bufferArray = await async.parallel(
             spec.specArray.map( _spec => cb => { 
@@ -276,7 +277,7 @@ async function getReportsGroup(cb, spec, user, ...params) {
         );
 
         var zip = new JSZip();
-        var folder = zip.folder(`${spec.fileBaseName}_${timestampStr}`);
+        var folder = zip.folder(folderName);
 
         // Ensure each bufferArray item is actual content.
         for (let idx = 0; idx < spec.specArray.length; idx++) {
@@ -317,6 +318,9 @@ async function getReportsGroup(cb, spec, user, ...params) {
         }
 
         buffer = await zip.generateAsync({type:"arraybuffer"});
+        if (includeFileName) {
+            buffer = { format: 'named-report', filename: `${folderName}.zip`, content: buffer };
+        }
 
     } catch(e) {
         await logMessage('error', `Error generating report group: ${e.message}`);
